@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CarTime - Publicar plaza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+     
+    </head>
+    <body>
+        <div class="row">
+        <div class="col-md-1 pull-left">
+            <a href="/buscar_plaza.html"> Buscar plaza </a>
+        </div> 
+    </div>
+    <div class="container col-md-6 col-md-offset-3" style="border:1px solid #000000;">
+    	<div class="col-md-6">
+		<form action="/perfil.html" method="post" >
+                <div id="publicar-form" class="form-group">
+
+                    <div>
+                        <h3>
+                            <span>Publica tu plaza gratis</span>
+                        </h3>
+                    </div>
+
+                    <div class="row form-group input-group">
+                        
+                        <input name="direccion_publicar" type="text" data-min-length="1" placeholder="Dirección*"  required>
+                    </div>
+
+                    <div class="row form-group input-group">
+                        
+                        ​<textarea  name="descripcion_publicar" id="txtArea" maxlength="500" rows="10" cols="70" placeholder="Descripción*"  required></textarea>
+                        <i class="fa fa-align-left icon-characters" aria-hidden="true"></i>
+                        <div id="charNum"> <span>Máximo 500 caracteres.</span> </div>
+                    </div>
+                    
+                    <!-- alternativa para tamano
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-primary"><img src="https://moto"></button>
+    <button type="button" class="btn btn-primary">Coche</button>
+    <button type="button" class="btn btn-primary">Furgoneta</button>
+  </div>
+                    //-->
+                    <div class="row form-group col-md-6 pull-left">
+                        <label class="col-form-label">Tamaño: *</label>
+                        <select name="tamano_publicar"  id="exampleSelect1" required>
+                            <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
+                            <option>Moto</option>
+                            <option>Plaza pequeña</option>
+                            <option>Plaza grande</option>
+                            <option>Furgoneta</option>
+                        </select>
+                    </div>
+
+                    <div class="row form-group  pull-left">
+                        <span>Los campos marcados con * son obligatorios.</span>
+                    </div>
+
+                    <div class="submit-row">
+                        <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
+                    </div>
+
+                    </div>
+			</form>
+
+
+</div>
+    </div>
+    </body>
+</html>
