@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-mar-2018, 20:57:14
+    Author     : Pablo Marina Cortés
+*/
+
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css") print;
+
+a.rnav
+{
+        text-align: center !important;
+        margin:0px !important;
+        padding-right: 10% !important;
+        padding-left: 10% !important;
+        font-size: 85% !important;
+}
+
+a.vertical-line-height
+{
+        text-align: center !important;
+        margin:0px !important;
+        padding-right: 10% !important;
+        padding-left: 10% !important;
+        font-size: 85% !important;
+}
+
+a.rnav-last
+{
+        text-align: center !important;
+        margin:0px !important;
+        padding-right: 10% !important;
+        padding-left: 10% !important;
+        font-size: 85% !important;
+}
+
+.icon-bar 
+{
+  background-color: black;
+}
