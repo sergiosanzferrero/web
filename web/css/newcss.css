@@ -25,8 +25,27 @@ div.container{
     margin-left:200px;
     margin-top:200px;
     
+   }
+div.datosperfil{
+    font-size:24px;
+    text-align:left;
+    margin-left:300px;
+}   
+
+#fotoperfil{
+    display:block;
+    margin:auto;
+    width:300px;
+    height:300px;
+    
     
 }
+#tituloperfil{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
 
 html {
   min-height: 100%;
