@@ -12,23 +12,27 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="newcss.css" rel="stylesheet" type="text/css"> 
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="css/publicar.css" rel="stylesheet" type="text/css"> 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
      
     </head>
     <body>
+        <header>
+            			<a href="index.html">
+            <img src="Imagenes/cartime.png" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Buscar plaza</a></li>
+                </ul>
+            </nav>
+        </header>
         <div class="row">
-        <div class="col-md-1 pull-left">
-            <a href="/buscar_plaza.html"> Buscar plaza </a>
-        </div> 
+
     </div>
     <div class="container col-md-6 col-md-offset-3" style="border:1px solid #000000;">
     	<div class="col-md-6">
-		<form action="/perfil.html" method="post" >
+		<form action="/perfil.html">
                 <div id="publicar-form" class="form-group">
 
                     <div>
@@ -72,7 +76,9 @@ and open the template in the editor.
                     </div>
 
                     <div class="submit-row">
+
                         <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
+
                     </div>
 
                     </div>
