@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CarTime - Detalles de plaza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="css/plaza.css" rel="stylesheet" type="text/css"> 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+     
+    </head>
+    <body>
+        <div class="container-fluid" id="contplaza">
+            <h1>Calle de la plaza</h1>
+            <h1>Valladolid</h1>
+            <div class="row">
+                    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    
+<a href="#ip">Información de la plaza</a>&nbsp;|&nbsp;<a href="#pr">Propietario</a>&nbsp;|&nbsp;<a href="#ub">Ubicación</a>&nbsp;|&nbsp;<a href="#va">Valoraciones</a>
+
+                    
+                </div>
+            </div>
+
+        </div>
+                                <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-3">
+                    <h4 id="ip"> Descripción </h4>
+                    </div>
+                        <div class="col-md-9">
+                            Plaza para moto en parking de residentes. Vigilancia 24h.
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                    <h4 > Tamaño </h4>
+                    </div>
+                        <div class="col-md-9">
+                            Moto Pequeño Grande Furgoneta
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                    <h4 > Acceso </h4>
+                    </div>
+                        <div class="col-md-9">
+                            El dueño te dejará el mando. Tendrás que devolverlo cuando acabe la reserva.
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well"><img src="Imagenes/fotoperfil.png"  alt="Foto de perfil"><h4 id="pr"> Persona1 </h4><p>Ha alquilado varias veces su plaza</p></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-4" >
+        <div class="well">
+            <h4> Reservar plaza </h4>
+            <h5> 2,50 €/hora </h5>
+            <p> 4,00 €/día </p>
+            <p> 20,00 €/semana </p>
+            <form action="perfil.html">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5> Llegada </h5>
+                    <input class="form-control" type="date" id="llegada-date-input" name="fecha_llegada" required>
+                </div>
+                <div class="col-md-6"> 
+                    <h5> Salida </h5> 
+                    <input class="form-control" type="date" id="llegada-date-input" name="fecha_llegada" required>
+                </div>
+                </div>
+            <h4> Total: </h4>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+                   <div class="submit-row">
+
+                        <input class="btn btn-default submit-form" id="submit-reservar" name="submit-reservar" value=" Reservar " type="submit">
+
+                   </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+                    <div  id="contubica" style="border:1px solid #000000;">
+                        <h3 id="ub"> Ubicación </h3>
+<div class="row">
+    <div class="col-md-8">
+        <div class="well">Mapa</div>
+    </div>
+    <div class="col-md-4">
+        <div class="well">Dirección</div>
+    </div>
+</div>
+                        </div>
+            <br>
+                                <div  id="contvalora" style="border:1px solid #000000;">
+                        <h3 id="va"> Valoraciones </h3>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <p>★★★★★&emsp;&emsp;&emsp;Diciembre 2017</p>
+            <br>
+            <p>Todo perfecto.</p>
+            <p>Volvería a alquilar esta plaza sin dudarlo.</p>
+        
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well">           
+            <p>★★★★&emsp;&emsp;&emsp;Enero 2018</p>
+            <br>
+            <p>Buena ubicación.</p>
+            <p>Carlos puntual y amable.</p>
+        </div>
+    </div>
+</div>
+                        </div>
+        </div>
+    </body>
+</html>
