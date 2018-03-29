@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29-mar-2018, 19:52:50
+    Author     : G33
+*/
+
+#contplaza h1{
+    text-align: center;
+}
+
+#contubica {
+
+    text-indent: 20px;
+}
+
+#contvalora {
+    
+    text-indent: 20px;
+}
+
+body { 
+    background: #f7f7f7;
+    color: #555753;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
