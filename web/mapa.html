@@ -11,7 +11,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Cartime - Mapa</title>
+        <title>CarTime - Mapa</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -128,7 +128,32 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
-
+<div class="container" id="content1">
+            <h2>Plazas en tu zona</h2>
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label>Lugar</label>
+                        <input  class="form-control" name="lugar" type="text" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label >Fecha</label>
+                        <input  class="form-control" name="fecha"  type="text" maxlength="50">
+                    </div>
+                    <div class="row form-group col-md-6 pull-left">
+                        <label class="col-form-label">Tamaño:</label>
+                        <select name="tamano"  id="exampleSelect1" required>
+                            <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
+                            <option>Moto</option>
+                            <option>Plaza pequeña</option>
+                            <option>Plaza grande</option>
+                            <option>Furgoneta</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        <div class="container" id="botonB">
+            <button type="submit" class="btn btn-default">Buscar</button>
+        </div>
             </div>
             <div id="address"></div>
             <hr>
