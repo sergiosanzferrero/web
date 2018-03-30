@@ -17,6 +17,7 @@ a.rnav
         padding-right: 10% !important;
         padding-left: 10% !important;
         font-size: 85% !important;
+        
 }
 
 a.vertical-line-height
@@ -39,7 +40,7 @@ a.rnav-last
 
 .icon-bar 
 {
-  background-color: black;
+  background-color: white;
 }
 div.barrabuscar
 {
