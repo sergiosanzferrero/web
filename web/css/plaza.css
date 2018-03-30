@@ -29,3 +29,7 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+
+div button{
+    padding:10px 10px 10px 10px;
+}

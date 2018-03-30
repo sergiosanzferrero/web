@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Valoración</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="css/publicar.css" rel="stylesheet" type="text/css"> 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+     
+    </head>
+    <body>
+       <div class="container col-md-6 col-md-offset-3" style="border:1px solid #000000;margin-top: 10px;">
+    	<div class="col-md-6">
+		<form action="plaza.html">
+                <div id="publicar-form" class="form-group">
+
+                    <div>
+                        <h3>
+                            <span>Añadir valoración</span>
+                        </h3>
+                    </div>
+
+                    <div class="row form-group input-group">
+                       <span class="input-group-addon"></span>
+                        <input name="nombre_valoracion" type="text" data-min-length="1" placeholder="Nombre*"  required>
+                    </div>
+                    
+
+                    <div class="row form-group input-group">
+
+                        ​<textarea  name="valoracion" id="txtArea" maxlength="500" rows="10" cols="70" placeholder="Descripción*"  required></textarea>
+                        <i class="fa fa-align-left icon-characters" aria-hidden="true"></i>
+                        <div id="charNum"> <span>Máximo 500 caracteres.</span> </div>
+                    </div>
+                    
+                    <!-- alternativa para tamano
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-primary"><img src="https://moto"></button>
+    <button type="button" class="btn btn-primary">Coche</button>
+    <button type="button" class="btn btn-primary">Furgoneta</button>
+  </div>
+                    //-->
+           
+
+                    <div class="row form-group  pull-left">
+                        <span>Los campos marcados con * son obligatorios.</span>
+                    </div>
+
+                    <div class="submit-row">
+
+                        <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
+
+                    </div>
+
+                    </div>
+			</form>
+
+
+        </div>
+        </div>
+    </body>
+</html>
