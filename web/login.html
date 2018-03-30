@@ -17,8 +17,8 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container" style="width:90%; padding:0; margin:0 auto;">
-            <nav class="navbar navbar-light bg-light navbar-static-top" style="border: 0; padding:0; margin:0; width:100%;">
+        <div class="container" style="width:100%; padding:0; margin:0 auto;">
+        <nav class="navbar navbar-light bg-light navbar-static-top"  style="border: 0; padding:0; margin:0; width:100%;background:black;">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
@@ -26,28 +26,31 @@ and open the template in the editor.
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logo.jpg" alt="logo" style="height: auto; margin:0;padding:0">
+                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
+                            <img class="img-responsive" src="Imagenes/logo.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Inicio</a></li>
-                            <li><a href="#">Parkings</a></li>
-                            <li><a href="#">Contacto</a></li>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="publicar_plaza.html">Publicar plaza</a></li>
+                        <li ><a href="mapa.html">Parkings</a></li>
+                
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="login.html">Iniciar sesión</a></li>
+                            <li><a href="registro.html">Registrarse</a></li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="login.html">Iniciar sesi&oacute;n</a></li>
-                                  <li><a href="registro.html">Registrarse</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </nav>
+       
+        <div class="container" style="width:90%; padding:0; margin:0 auto;">
         <h2>Iniciar sesi&oacute;n</h2>
             <form action="/login.jsp" align="left">
                 <div class="form-group">
@@ -63,7 +66,8 @@ and open the template in the editor.
             <hr>
             <footer>
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
-            </footer>         
+            </footer>  
+        </div>
         </div>
     </body>
 </html>

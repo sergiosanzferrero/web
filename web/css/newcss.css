@@ -14,6 +14,7 @@ img.parking{
     float:right;
     margin-right:400px;
     margin-top:200px;
+
     
  
 }
@@ -26,16 +27,24 @@ div.container{
     margin-top:200px;
     
    }
-div.datosperfil{
+#datosperfil{
+    width: 500px;
     font-size:24px;
     text-align:left;
-    margin-left:300px;
+    margin:auto;
+    margin-top: 100px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-width: thick;
+    border-style:solid;
 }   
 
 
 #fotoperfil{
     display:block;
     margin:auto;
+    margin-top:100px;
     width:300px;
     height:300px;
     
@@ -45,30 +54,11 @@ div.datosperfil{
     font-size: 36px;
     font-weight: bold;
     text-align: center;
-}
-
-
-html {
-  min-height: 100%;
-  position: relative;
-}
-
-body { 
-    background: #f7f7f7;
-    color: #555753;
-    padding: 0;
-    padding-top: 1em;
-    margin: 0;
-    font-family: sans-serif;
+    
 }
 
 
 
-header img{
-    height: 15em;
-    width: 22em;
-    border-radius: 5px;
-}
 h2{
     margin-bottom: 1px;
     margin-top: 1px;
