@@ -12,45 +12,45 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="css/newcss.css" rel="stylesheet" type="text/css"> 
+        <link href="css/navbar.css" rel="stylesheet" type="text/css">
+        <link href="css/perfil.css" rel="stylesheet" type="text/css">
+        
     </head>
     <body>
-     <div class="container" style=" padding:0; margin:0; width:100%;">
-        <nav class="navbar navbar-light bg-light navbar-static-top"  style="border: 0; padding:0; margin:0; width:100%;background:white;">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logocartime.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="publicar_plaza.html">Publicar plaza</a></li>
-                        <li ><a href="mapa.html">Parkings</a></li>
-                
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="login.html">Iniciar sesión</a></li>
-                            <li><a href="registro.html">Registrarse</a></li>
-                        </ul>
-                        </li>
-                    </ul>
-                    </div>
+     <div class="container principal">
+        <nav class="navbar navbar-light bg-light navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle nabvar" data-toggle="collapse" data-target="#myNavbar" style="">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
+                    </a>
                 </div>
-            </nav>
-        
-        
-         <div>
-            <h1 id="tituloperfil" >PERFIL</h1>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Inicio</a></li>
+                    <li><a href="mapa.html">Buscar plaza</a></li>
+                    <li><a href="publicar_plaza.html">Publicar plaza</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container secundario">
+            <h1 id="tituloperfil" >Perfil</h1>
             <img src="Imagenes/man.png" class="img-circle" id="fotoperfil" alt="Foto perfil">
             <div id="datosperfil" >
                 <p>Nombre: Pedro </p>
@@ -58,11 +58,11 @@ and open the template in the editor.
                 <p>Email: pedroduque@gmail.com</p>
                 <p>Teléfono de contacto: 666777888</p>
             </div>
-         </div>
-         <hr>
-            <footer>
-            <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
-            </footer>  
+        </div>
+        <hr>
+        <footer>
+        <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
+        </footer>  
      </div>
     </body>
 </html>

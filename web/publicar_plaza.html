@@ -12,31 +12,30 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="css/publicar.css" rel="stylesheet" type="text/css"> 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
-     
+        <!--<link href="css/publicar.css" rel="stylesheet" type="text/css"> -->
+        <link href="css/navbar.css" rel="stylesheet" type="text/css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">     
     </head>
     <body>
-      <div class="container" style=" padding:0; margin:0; width:100%;">         
-        <nav class="navbar navbar-light bg-light navbar-static-top"   style="border: 0; padding:0; margin:0; width:100%;background:white;">
+      <div class="container principal">
+            <nav class="navbar navbar-light bg-light navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
+                        <button type="button" class="navbar-toggle nabvar" data-toggle="collapse" data-target="#myNavbar" style="">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logocartime.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="mapa.html">Buscar plaza</a></li>
                         <li><a href="publicar_plaza.html">Publicar plaza</a></li>
-                        <li ><a href="mapa.html">Parkings</a></li>
-                
+                        <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -50,75 +49,53 @@ and open the template in the editor.
                     </div>
                 </div>
             </nav>
-    
-        
-    <div class="container col-md-6 col-md-offset-3" style="border:1px solid #000000;margin-top: 10px;">
-    	<div class="col-md-6">
-		<form action="mapa.html">
-                <div id="publicar-form" class="form-group">
-
-                    <div>
-                        <h3>
-                            <span>Publica tu plaza gratis</span>
-                        </h3>
+          <div class="container col-sm-12" style="margin:0;padding:0">
+            <div class="container col-sm-6" style="margin:0;padding:0">
+                <h2 style="margin:1em;margin-left:0">Publica tu plaza gratis</h2>
+		<form action="mapa.html" style="border:1px solid #000000;margin:0; padding:0;">
+                    <div id="publicar-form" class="form-group" style="margin:0; padding:0;">
+                        <div class="row form-group input-group" style="margin:0.5em; padding:0;">
+                            <span class="input-group-addon"><i class="fas fa-map-marker"></i></span>
+                            <input style="width: 100%" name="direccion_publicar" type="text" data-min-length="1" placeholder="Dirección*"  required>
+                        </div>
+                        <div class="row form-group input-group" style="margin:0.5em; padding:0;">
+                           <span class="input-group-addon"><i class="far fa-clock"></i></span>
+                            <input style="width: 100%" name="horario_publicar" type="text" data-min-length="1" placeholder="Horario">
+                        </div>
+                        <div class="row form-group input-group" style="margin:0.5em; padding:0;">
+                            <span class="input-group-addon"><i class="far fa-money-bill-alt"></i></span>
+                            <input style="width: 100%" name="precio_publicar" type="text" data-min-length="1" placeholder="Precio €/día*"  required>
+                        </div>
+                        <div class="row form-group input-group" style="margin:0.5em; padding:0;width:100%;">
+                            ​<textarea  name="descripcion_publicar" id="txtArea" maxlength="500" style="width:98%; margin:0;padding:0;" placeholder="Descripción*"  required></textarea>
+                            <div id="charNum"> <span>Máximo 500 caracteres.</span> </div>
+                        </div>
+                        <div class="row form-group col-md-6 pull-left" style="margin:0.5em; padding:0;">
+                            <label class="col-form-label">Tamaño: *</label>
+                            <select name="tamano_publicar"  id="exampleSelect1" required>
+                                <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
+                                <option>Moto</option>
+                                <option>Plaza pequeña</option>
+                                <option>Plaza grande</option>
+                                <option>Furgoneta</option>
+                            </select>
+                        </div>
+                        <div class="row form-group input-group" style="margin:0.5em; padding:0;">
+                            <label for="exampleFormControlFile1">Suba una foto del aparcamiento:</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                        <div class="row form-group  pull-left" style="margin:0.5em; padding:0;">
+                            <span>Los campos marcados con * son obligatorios.</span>
+                        </div>
+                        <div class="submit-row" style="margin:0.5em; padding:0;">
+                            <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
+                        </div>
                     </div>
-
-                    <div class="row form-group input-group">
-                       <span class="input-group-addon"><i class="fas fa-map-marker"></i></span>
-                        <input name="direccion_publicar" type="text" data-min-length="1" placeholder="Dirección*"  required>
-                    </div>
-                    
-                    <div class="row form-group input-group">
-                       <span class="input-group-addon"><i class="far fa-clock"></i></span>
-                        <input name="horario_publicar" type="text" data-min-length="1" placeholder="Horario">
-                    </div>
-                    
-                    <div class="row form-group input-group">
-                        <span class="input-group-addon"><i class="far fa-money-bill-alt"></i></span>
-                        <input name="precio_publicar" type="text" data-min-length="1" placeholder="Precio €/día*"  required>
-                    </div>
-
-                    <div class="row form-group input-group">
-
-                        ​<textarea  name="descripcion_publicar" id="txtArea" maxlength="500" rows="10" cols="70" placeholder="Descripción*"  required></textarea>
-                        <i class="fa fa-align-left icon-characters" aria-hidden="true"></i>
-                        <div id="charNum"> <span>Máximo 500 caracteres.</span> </div>
-                    </div>
-                    
-                    <div class="row form-group col-md-6 pull-left">
-                        <label class="col-form-label">Tamaño: *</label>
-                        <select name="tamano_publicar"  id="exampleSelect1" required>
-                            <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
-                            <option>Moto</option>
-                            <option>Plaza pequeña</option>
-                            <option>Plaza grande</option>
-                            <option>Furgoneta</option>
-                        </select>
-                    </div>
-                    
-                      <div class="row form-group input-group">
-    <label for="exampleFormControlFile1">Suba una foto del aparcamiento:</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-
-                    <div class="row form-group  pull-left">
-                        <span>Los campos marcados con * son obligatorios.</span>
-                    </div>
-
-                    <div class="submit-row">
-
-                        <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
-
-                    </div>
-
-                    </div>
-			</form>
-
-
-        </div>
-        </div>
-          <hr>
-            <footer>
+		</form>
+            </div>
+              </div>
+            <hr>
+            <footer style="margin-top:1.5em;">
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
       </div>

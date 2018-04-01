@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+@media (max-width: 650px) /*elimina el carousel para movil*/
+{
+    #myCarousel
+    {
+        display: none;
+    }
+}
+
+.barrabuscar
+{
+    margin-top:30px;
+}
+
+#imagenlogo
+{
+    display:block;
+    margin:auto;
+    margin-top:100px;
+    margin-bottom: 10em;
+    
+}
+
+.parkinglogin{
+    margin: 0 auto;
+    display: block;
+    margin-top: 5em;
+}

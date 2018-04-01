@@ -13,38 +13,32 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
-            @media (max-width: 650px) /*elimina el carousel para movil*/
-            {
-                #myCarousel
-                {
-                    display: none;
-                }
-            }
         </style>
     </head>
     <body>
-        <div class="container" style=" padding:0; margin:0; width:100%;">
-            <nav class="navbar navbar-light bg-light navbar-static-top"  style="border: 0; padding:0; margin:0; width:100%;background:white;">
+        <div class="container principal">
+            <nav class="navbar navbar-light bg-light navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
+                        <button type="button" class="navbar-toggle nabvar" data-toggle="collapse" data-target="#myNavbar" style="">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logocartime.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="mapa.html">Buscar plaza</a></li>
                         <li><a href="publicar_plaza.html">Publicar plaza</a></li>
-                        <li ><a href="mapa.html">Parkings</a></li>
-                
+                        <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -66,7 +60,7 @@ and open the template in the editor.
                 </ol>
                 <div class="carousel-inner" style="width:100%">
                     <div class="item active" style="width:100%">
-                        <img src="Imagenes/carousel.jpg" alt="Tunel" style="width:100%">
+                        <img src="Imagenes/carousel1.jpg" alt="San Diego" style="width:100%">
                     </div>
                     <div class="item" style="width:100%">
                         <img src="Imagenes/carousel2.jpg" alt="Chicago" style="width:100%">
@@ -84,28 +78,22 @@ and open the template in the editor.
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div>
         
-        <div class="barrabuscar">   
-            
-        <form action="mapa.html">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Inserte una ciudad" name="search">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-              </div>
+            <div class="secundario">   
+                <form action="mapa.html">
+                    <div class="input-group">
+                      <input type="text" class="form-control barrabuscar" placeholder="Inserte una ciudad" name="search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default barrabuscar" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                    </div>
+                </form>
             </div>
-        </form>
-        </div>   
-            <img src="Imagenes/cartime.jpg" id="imagenlogo" alt="logo">
-                
-       
-        
-        
         <hr>
             <footer>
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
+        </div>
     </body>
 </html>
 

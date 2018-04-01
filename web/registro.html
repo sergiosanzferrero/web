@@ -12,28 +12,31 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="css/newcss.css" rel="stylesheet" type="text/css"> 
+        <!--<link href="css/newcss.css" rel="stylesheet" type="text/css"> -->
+        <link href="css/navbar.css" rel="stylesheet" type="text/css"> 
+        
     </head>
     
     <body>
-        <nav class="navbar navbar-light bg-light navbar-static-top"  style="border: 0; padding:0; margin:0; width:100%;background:white;">
+        <div class="container principal">
+            <nav class="navbar navbar-light bg-light navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
+                        <button type="button" class="navbar-toggle nabvar" data-toggle="collapse" data-target="#myNavbar" style="">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logocartime.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="mapa.html">Buscar plaza</a></li>
                         <li><a href="publicar_plaza.html">Publicar plaza</a></li>
-                        <li ><a href="mapa.html">Parkings</a></li>
-                
+                        <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -48,37 +51,34 @@ and open the template in the editor.
                 </div>
             </nav>
         
-        
-           
-        <img class="parking" src="Imagenes/cartime.jpg" alt="logo">
-        <div class="container" id="content1">
-            <h2>Registro</h2>
-                <form action="mapa.html">
-                    <div class="form-group">
-                        <label>Nombre:</label>
-                        <input  class="form-control" name="nombre" placeholder="Escriba su nombre" type="text" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label >Apellidos:</label>
-                        <input  class="form-control" name="apellidos" placeholder="Escriba su apellido" type="text" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label >Email:</label>
-                        <input class="form-control" name="email" placeholder="Escriba su correo electrónico" type="text" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label>Contraseña:</label>
-                        <input class="form-control" name="contraseña" type="password" maxlength="50">
-                    </div>
- 
-                    <button type="submit" class="btn btn-default">Regístrate</button>
-                </form>
-            <hr>
+            <div class="container row" style="margin:0;padding: 0;"> 
+                <div class="container col-sm-6" style="margin:0;padding: 0;">
+                    <h2>Registro</h2>
+                    <form action="mapa.html">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input  class="form-control" name="nombre" placeholder="Escriba su nombre" type="text" maxlength="50">
+                            <br>
+                            <label >Apellidos:</label>
+                            <input  class="form-control" name="apellidos" placeholder="Escriba su apellido" type="text" maxlength="50">
+                            <br>
+                            <label >Email:</label>
+                            <input class="form-control" name="email" placeholder="Escriba su correo electrónico" type="text" maxlength="50">
+                            <br>
+                            <label>Contraseña:</label>
+                            <input class="form-control" name="contraseña" type="password" maxlength="50">
+                        </div>
+                        <button type="submit" class="btn btn-default">Regístrate</button>
+                    </form>
+                </div>
+                <div class="container col-sm-6">
+                    <img class="parking" src="Imagenes/cartime.jpg" alt="logo" style="display:block;margin:auto;margin-top:10%;">
+                </div>
+            </div>
+        <hr>
             <footer>
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
-            </div>
-        
- 
+  </div>
     </body>
 </html>

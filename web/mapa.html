@@ -16,54 +16,33 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
+        <link rel="stylesheet" href="css/navbar.css"/>
+        <link rel="stylesheet" href="css/mapa.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
         <script src="http://ahalota.github.io/Leaflet.CountrySelect/Leaflet.CountrySelect.js"></script>
-        <style>
-            .scrollableitems
-            {
-                max-height: 650px;
-                overflow-y: scroll;
-                overflow-x: hidden;
-            }
-            ul.item
-            {
-                list-style-type: none;
-                margin-left:0px;
-                padding-left:0px;
-            }
-            ul.item li
-            {
-                float: left;
-            }
-            ul.item li:hover
-            {
-                background-color:#000;
-                opacity:0.7;
-            }
-        </style>
     </head>
     <body>
-        <div class="container" style="width:100%; padding:0; margin:0 auto;">
-            <nav class="navbar navbar-light bg-light navbar-static-top"  style="border: 0; padding:0; margin:0; width:100%;background:white;">
+        <div class="container principal">
+            <nav class="navbar navbar-light bg-light navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:0">
+                        <button type="button" class="navbar-toggle nabvar" data-toggle="collapse" data-target="#myNavbar" style="">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html" style="padding:0; margin:0;">
-                            <img class="img-responsive" src="Imagenes/logocartime.jpg" alt="logo" style="height: 50px; margin:0;padding:0">
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="mapa.html">Buscar plaza</a></li>
                         <li><a href="publicar_plaza.html">Publicar plaza</a></li>
-                        <li ><a href="mapa.html">Parkings</a></li>
-                
+                        <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -77,8 +56,7 @@ and open the template in the editor.
                     </div>
                 </div>
             </nav>
-            <div class="container" style="width:90%; padding:0; margin:0 auto;">
-            <div class="row" style="margin:0;padding:0">
+            <div class="container secundario">
                 <div class="container col-sm-6" style="margin:0;padding:0">
                     <h2 style="margin:1em;margin-left:0">Buscar parkings</h2>
                     <div style="width:100%; height: 50px; padding:0; margin:0; background: #E6E6E6"> 
@@ -91,7 +69,32 @@ and open the template in the editor.
                     </div>	
                     <div id="map" style="width: 100%;height:600px;position:static;padding:0;"></div>
                 </div>
-                <div class="container col-sm-6" style="margin:0;">
+                <div class="container col-sm-6" style="margin:0;padding:0;">
+                <h2 style="margin:1em;margin-left:1.6em;height: 25px;">Plazas disponibles</h2>
+                    <form action="/action_page.php" style="width:100%;margin:0;padding:3em;padding-top:0;">
+                        <div class="form-group" >
+                            <label>Lugar</label>
+                            <input  class="form-control" name="lugar" type="text" maxlength="50">
+                            <br>
+                            <label >Fecha</label>
+                            <input  class="form-control" name="fecha"  type="text" maxlength="50">
+                        </div>
+                        <div class="row form-group col-md-6 pull-left">
+                            <label class="col-form-label">Tamaño:</label><br>
+                            <select name="tamano"  id="exampleSelect1" required>
+                                <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
+                                <option>Moto</option>
+                                <option>Plaza pequeña</option>
+                                <option>Plaza grande</option>
+                                <option>Furgoneta</option>
+                            </select>
+                        </div>
+                        <br><br>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                </div>
+                
+                <div class="container col-sm-12" style="margin:0;padding:0">
                     <h2 style="margin:1em;margin-left:1.6em;height: 25px;">Plazas disponibles</h2>
                     <div class="container scrollableitems" style="width:100%;margin:0;padding:3em;padding-top:0;">
                         <ul class="item">
@@ -129,38 +132,11 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-                <div class="container">
-                <h2>Plazas en tu zona</h2>
-                    <form action="/action_page.php">
-                        <div class="form-group">
-                            <label>Lugar</label>
-                            <input  class="form-control" name="lugar" type="text" maxlength="50">
-                        </div>
-                        <div class="form-group">
-                            <label >Fecha</label>
-                            <input  class="form-control" name="fecha"  type="text" maxlength="50">
-                        </div>
-                        <div class="row form-group col-md-6 pull-left">
-                            <label class="col-form-label">Tamaño:</label>
-                            <select name="tamano"  id="exampleSelect1" required>
-                                <option selected disabled hidden style='display: none' value=''>Seleccione una opción...</option>
-                                <option>Moto</option>
-                                <option>Plaza pequeña</option>
-                                <option>Plaza grande</option>
-                                <option>Furgoneta</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="container" id="botonB">
-                    <button type="submit" class="btn btn-default">Buscar</button>
-                </div>
             <div id="address"></div>
             <hr>
             <footer>
                 <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>
-            </div>
         </div>
         <script src="js/mapa.js"></script>
     </body>
