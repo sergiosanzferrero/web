@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import BD.UsuarioBD;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -32,6 +33,7 @@ public class ControlUsuario extends HttpServlet {
         String telefono = request.getParameter("telefono");
         
         Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
+        UsuarioBD.insert(usuario);
         HttpSession session = request.getSession(); 
         session.setAttribute("usuario", usuario);
         String url = "registro.jsp"; 
