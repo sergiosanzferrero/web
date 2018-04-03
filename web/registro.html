@@ -54,8 +54,11 @@ and open the template in the editor.
             <div class="container row" style="margin:0;padding: 0;"> 
                 <div class="container col-sm-6" style="margin:0;padding: 0;">
                     <h2>Registro</h2>
-                    <form action="mapa.html">
+                    <form action="registro.jsp">
                         <div class="form-group">
+                            <label>DNI:</label>
+                            <input  class="form-control" name="dni" placeholder="Escriba su nombre" type="text" maxlength="50">
+                            <br>
                             <label>Nombre:</label>
                             <input  class="form-control" name="nombre" placeholder="Escriba su nombre" type="text" maxlength="50">
                             <br>
@@ -66,7 +69,10 @@ and open the template in the editor.
                             <input class="form-control" name="email" placeholder="Escriba su correo electrónico" type="text" maxlength="50">
                             <br>
                             <label>Contraseña:</label>
-                            <input class="form-control" name="contraseña" type="password" maxlength="50">
+                            <input class="form-control" name="password" type="password" maxlength="50">
+                            <br>
+                            <label>Teléfono:</label>
+                            <input class="form-control" name="telefono" type="text" maxlength="50">
                         </div>
                         <button type="submit" class="btn btn-default">Regístrate</button>
                     </form>
