@@ -13,7 +13,7 @@
     </head>
     <body>
         <%@ page import="modelo.Usuario" %>
-        <% Usuario usuario = (Usuario) request.getAttribute("usuario"); %>
-        <h1>Bienvenido <%=usuario.getNombre() %>  </h1>
+        <%  Usuario usuario = (Usuario) session.getAttribute("usuario"); %>
+        <h1>Bienvenido <%=usuario.getNombre()%>  </h1>
     </body>
 </html>

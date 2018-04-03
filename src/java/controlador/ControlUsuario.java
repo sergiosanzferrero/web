@@ -35,9 +35,9 @@ public class ControlUsuario extends HttpServlet {
         HttpSession session = request.getSession(); 
         session.setAttribute("usuario", usuario);
         String url = "registro.jsp"; 
-        RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
-        dispatcher.forward(request, response);
-
+        //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
+        //dispatcher.forward(request, response);
+        request.getRequestDispatcher(url).forward(request, response);
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
