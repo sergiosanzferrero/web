@@ -6,7 +6,7 @@
 package BD;
 import java.sql.*;
 import modelo.Usuario;
-import static org.apache.tomcat.jni.Socket.pool;
+
 
 
 
@@ -41,5 +41,60 @@ public static int insert(Usuario usuario) {
     }
     
 }
+public static boolean existeUsuario(String dni) { 
+    ConnectionPool pool = ConnectionPool.getInstance();
+    Connection connection = pool.getConnection(); 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    String query = "SELECT dni FROM usuario WHERE dni = ? ";
+    
+    try { 
+        ps = connection.prepareStatement(query); 
+        ps.setString(1, dni);
+        rs = ps.executeQuery();
+        boolean res = rs.next();
+        rs.close();
+        ps.close(); 
+        pool.freeConnection(connection); 
+        return res;
+    } catch (SQLException e) { 
+        e.printStackTrace();
+        return false; 
+    }
+}
+public static Usuario seleccionaUsuario(String dni) { 
+    ConnectionPool pool = ConnectionPool.getInstance();
+    Connection connection = pool.getConnection(); 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    String query = "SELECT * FROM usuario WHERE dni = ?";
+    
+    try { 
+        ps = connection.prepareStatement(query); 
+        ps.setString(1, dni);
+        rs = ps.executeQuery();
+        Usuario usuario=null;
+        if (rs.next()) {
+            usuario = new Usuario(); 
+            usuario.setDni(rs.getString("dni"));
+            usuario.setNombre(rs.getString("nombre"));
+            usuario.setApellidos(rs.getString("apellidos"));
+            usuario.setEmail(rs.getString("email"));
+            usuario.setPassword(rs.getString("password"));
+            usuario.setTelefono(rs.getString("telefono"));
+        }     
+        rs.close();
+        ps.close(); 
+        pool.freeConnection(connection); 
+        return usuario;
+        
+    } catch (SQLException e) { 
+        e.printStackTrace();
+        return null; 
+    }
+}
+
 
 }
+
+

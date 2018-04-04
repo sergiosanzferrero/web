@@ -15,7 +15,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/usuario");
+            dataSource = (DataSource) ic.lookup("jdbc:mysql://localhost:3306/usuario");
         }        
         catch(Exception e) {
             e.printStackTrace(); 
