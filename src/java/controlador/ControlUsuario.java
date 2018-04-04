@@ -33,10 +33,17 @@ public class ControlUsuario extends HttpServlet {
         String telefono = request.getParameter("telefono");
         
         Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
+
+        String url="";
+        if(UsuarioBD.existeUsuario(usuario.getDni())){
+            url="mapa.html";
+        }
+        else{
+        url = "registro.jsp"; 
         UsuarioBD.insert(usuario);
         HttpSession session = request.getSession(); 
-        session.setAttribute("usuario", usuario);
-        String url = "registro.jsp"; 
+        session.setAttribute("usuario", usuario);   
+        }
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
         request.getRequestDispatcher(url).forward(request, response);
