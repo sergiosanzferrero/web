@@ -15,7 +15,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/usuario");
+            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/cartimedb");
         }        
         catch(Exception e) {
             e.printStackTrace(); 
