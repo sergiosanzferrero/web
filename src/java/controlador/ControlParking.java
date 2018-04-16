@@ -36,7 +36,7 @@ public class ControlParking extends HttpServlet {
 
         String url="";
 
-        url = "rmapa.html"; 
+        url = "mapa.html"; 
         ParkingBD.insert(parking);
         HttpSession session = request.getSession(); 
         session.setAttribute("parking", parking);   
