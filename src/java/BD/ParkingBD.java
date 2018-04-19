@@ -20,7 +20,7 @@ public class ParkingBD {
     public static int insert(Parking parking) {   
         ConnectionPool pool = ConnectionPool.getInstance(); 
         Connection connection = pool.getConnection();
-        String query="INSERT INTO parking (id,ciudad,calle,tipo,descripcion,img) VALUES (?, ?, ?, ?, ?, ?)";
+        String query="INSERT INTO plaza (id,ciudad,calle,tipo,descripcion,img) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement(query); 

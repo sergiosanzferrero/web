@@ -21,7 +21,7 @@ import modelo.Parking;
  *
  * @author sergiosanzferrero
  */
-@WebServlet(name = "ControlUsuario", urlPatterns = {"/ControlUsuario"})
+@WebServlet(name = "ControlParking", urlPatterns = {"/ControlParking"})
 public class ControlParking extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // get parameters from the request
