@@ -53,7 +53,7 @@ CREATE TABLE reserva
     dni VARCHAR(50),
     fechaInicio VARCHAR(50),
     fechaFin VARCHAR(50),
-    PRIMARY KEY(id,dni),
+    PRIMARY KEY(id,dni,fechaInicio),
     FOREIGN KEY (id) references plaza(id),
     FOREIGN KEY (dni) references usuario(dni)
 
