@@ -7,7 +7,15 @@ and open the template in the editor.
     Created on : 29-mar-2018, 15:44:42
     Author     : G33
 */
+.scrollable-results
+{
+	width:100%;
+	position: static;
+	padding-right:1em;
+	overflow:auto;
+}
 
+/*
 body { 
     background: #f7f7f7;
     color: #555753;
@@ -27,7 +35,7 @@ h2{
     margin-top: 1px;
 	text-align:center;
 
-}/*
+}
 nav {
     float: right;
     color:black;

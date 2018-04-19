@@ -1,27 +1,4 @@
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- 
-	Author     : pamaco
- */
-
-var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
-        thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
-
-var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        osmAttrib = '&copy; ' + osmLink + ' Contributors',
-        landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
-        thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
-
-var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-        landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
-
-var map = L.map('map', { layers: [osmMap] }).setView([40, 4], 3);
-
-var isLocationSelected = false;
-
 var geojson;
 var selectedLocation;
 
@@ -43,27 +20,6 @@ var HttpClient = function()
         req.send( null );
     }
 }
-
-
-/*Check if the formulary options are correct before to make the POST*/
-
-$(function()
-{
-    $('#mySearcher').on('submit', function(e) 
-    {
-        e.preventDefault();
-		if(!isLocationSelected)
-		{
-			alert("there is not selected location");
-			return;
-		}
-		
-		$('#carousel').css('display', 'none');
-		$('.items').css('display', 'block');
-		$('.scrollable-items').css('overflow-y', 'scroll');
-		map.setView([selectedLocation.lat, selectedLocation.lon], 20);
-    });
-});
 
 
 /*Event to search the results meanwhile the user is writting the query*/
@@ -134,40 +90,7 @@ $('#searcher').on('keyup', function()
 		$('.scrollable-results').css('display', 'none');
 });
 
-
-/*Allow to put events for future locations and focus the selected one in the map*/
-
 $('#results').on('click','option',function() 
 {
-	isLocationSelected = true;
-    $('#searcher').val(this.innerHTML);
-	$('.scrollable-results').css('display', 'none');
-	if(window.location.href.search('publicar') > 0)
-	{
-		map.setView([geojson[this.value].lat, geojson[this.value].lon], 20);
-	}
-	selectedLocation = geojson[this.value];
+	document.location = 'mapa.html?lat=1&lng=2&inner=' + this.innerHTML; 
 });
-
-
-/*Clean searcher input text when user press the button and remove items*/
-
-$('.clean-search-button').click(function()
-{
-	isLocationSelected = false;
-    $('#searcher').val('');
-	
-	while (results.firstChild) 
-	{
-		results.removeChild(results.firstChild);
-	}	
-	
-	$('.scrollable-results').css('display', 'none');
-	
-	$('.items').css('display', 'none');
-	$('.scrollable-items').css('overflow-y', 'hidden');
-	$('#carousel').css('display', 'block');
-
-	map.setView([40, 4], 3);
-});
-

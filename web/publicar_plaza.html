@@ -10,11 +10,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!--<link href="css/publicar.css" rel="stylesheet" type="text/css"> -->
+	<script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+        <script src="http://ahalota.github.io/Leaflet.CountrySelect/Leaflet.CountrySelect.js"></script>
         <link href="css/navbar.css" rel="stylesheet" type="text/css"> 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">     
+	<link href="css/publicar.css" rel="stylesheet" type="text/css"> 
     </head>
     <body>
       <div class="container principal">
@@ -50,13 +52,16 @@ and open the template in the editor.
                 </div>
             </nav>
           <div class="container col-sm-12" style="margin:0;padding:0">
-            <div class="container col-sm-6" style="margin:0;padding:0">
-                <h2 style="margin:1em;margin-left:0">Publica tu plaza gratis</h2>
-		<form action="mapa.html" style="border:1px solid #000000;margin:0; padding:0;">
+		  <h2>Publicar plaza</h2>
+            <div class="container col-sm-6" style="margin:0;padding:0;padding-right:1em;">
+		<form action="mapa.html" style="margin:0; padding:0;">
                     <div id="publicar-form" class="form-group" style="margin:0; padding:0;">
                         <div class="row form-group input-group" style="margin:0.5em; padding:0;">
                             <span class="input-group-addon"><i class="fas fa-map-marker"></i></span>
-                            <input style="width: 100%" name="direccion_publicar" type="text" data-min-length="1" placeholder="Dirección*"  required>
+                            <input list="results" style="width: 100%" id="searcher" name="searcher" type="text" data-min-length="1" placeholder="Dirección*"  required>
+							<div class="scrollable-results" style="display:none;">
+										<select multiple id="results"></select>
+										</div>
                         </div>
                         <div class="row form-group input-group" style="margin:0.5em; padding:0;">
                            <span class="input-group-addon"><i class="far fa-clock"></i></span>
@@ -87,17 +92,24 @@ and open the template in the editor.
                         <div class="row form-group  pull-left" style="margin:0.5em; padding:0;">
                             <span>Los campos marcados con * son obligatorios.</span>
                         </div>
+						<input id="lat" name="lat" value="0" type="hidden">
+						<input id="lng" name="lng" value="0" type="hidden">
                         <div class="submit-row" style="margin:0.5em; padding:0;">
                             <input class="btn btn-block submit-form" id="submit-publicar" name="submit-publicar" value=" Publicar " type="submit">
                         </div>
                     </div>
 		</form>
             </div>
+			<div class="container col-sm-6" style="margin:0;padding:0">
+			<div id="map" style="width: 100%;height:700px;position:static;padding:0;"></div>
+			</div>
               </div>
             <hr>
             <footer style="margin-top:1.5em;">
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
       </div>
+	  <script src="js/mapa.js"></script>
+	  <script src="js/publicar.js"></script>
     </body>
 </html>
