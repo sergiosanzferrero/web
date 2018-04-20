@@ -79,17 +79,17 @@ $('#searcher').on('keyup', function()
 			geojson = JSON.parse(response);
 			isLocationSelected = false;
 			
+			var results = $('#results');
+					
+			/*Remove the last nodes.
+			Warning we have to write it slowly in order to execute the event with our last query.
+			If we write fast meanwhile we are writting the last event has not ended yet so our actually query event will not be executed.
+			This issue can be parsed by loading all results in an array. */
+			
+			results.empty(); 
+					
 			if(Object.keys(geojson).length > 0)
 			{
-					var results = $('#results');
-					
-					/*Remove the last nodes*/
-					
-					while (results.firstChild)
-					{
-						results.removeChild(results.firstChild);
-					}
-					
 					/* We add the results to the select */
 					
 					for(i = 0; i < Object.keys(geojson).length; ++i)
@@ -145,6 +145,8 @@ $('#results').on('click','option',function()
 	if(window.location.href.search('publicar') > 0)
 	{
 		map.setView([geojson[this.value].lat, geojson[this.value].lon], 20);
+                $('#lat').val(geojson[this.value].lat);
+                $('#lon').val(geojson[this.value].lon);
 	}
 	selectedLocation = geojson[this.value];
 });

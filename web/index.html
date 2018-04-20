@@ -37,7 +37,7 @@ and open the template in the editor.
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
                         <li><a href="mapa.html">Buscar plaza</a></li>
-                        <li><a href="publicar_plaza.html">Publicar plaza</a></li>
+                        <li><a href="publicar.html">Publicar plaza</a></li>
                         <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -52,21 +52,21 @@ and open the template in the editor.
                     </div>
                 </div>
             </nav>
-            <div id="myCarousel" class="carousel slide container col-sm-12" style="margin:0 auto;padding:0;width:100%;" data-ride="carousel">
+            <div id="myCarousel" class="carousel slide container" style="margin:0 auto;padding:0;width:100%" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner" style="width:100%;">
-                    <div class="item active" style="width:100%">
-                        <img src="Imagenes/carousel1.jpg" alt="San Diego" style="width:100%">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="Imagenes/carousel1.jpg" style="width:100%" alt="San Diego">
                     </div>
-                    <div class="item" style="width:100%">
-                        <img src="Imagenes/carousel2.jpg" alt="Chicago" style="width:100%">
+                    <div class="item">
+                        <img src="Imagenes/carousel2.jpg" style="width:100%" alt="Chicago">
                     </div>
-                    <div class="item" style="width:100%">
-                        <img src="Imagenes/carousel3.jpg" alt="New York" style="width:100%">
+                    <div class="item">
+                        <img src="Imagenes/carousel3.jpg" style="width:100%" alt="New York">
                     </div>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -78,17 +78,20 @@ and open the template in the editor.
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        
             <div class="secundario">
-                      <input type="text" id="searcher" name="searcher" class="form-control barrabuscar" placeholder="Inserte una ciudad" name="search">
-					  <div class="scrollable-results" style="display:none;padding-right:0;">
-										<select multiple id="results" style="width:100%"></select>
-										</div>
-        <hr>
-            <footer>
-            <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
-            </footer>  
-        </div>
+                <input type="text" id="searcher" name="searcher" class="form-control barrabuscar" placeholder="Inserte una ciudad" name="search">
+					<div class="scrollable-results" style="display:none;padding-right:0;">
+						<select multiple id="results" style="width:100%"></select>
+					</div>
+					<form style="display: hidden" action="mapa.html" method="GET" id="form">
+						<input type="hidden" id="lng" name="lng" value=""/>
+						<input type="hidden" id="lat" name="lat" value=""/>
+					</form>
+				<hr>
+				<footer>
+				<p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
+				</footer>  
+			</div>
 		<script src="js/index.js"></script>
     </body>
 </html>

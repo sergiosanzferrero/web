@@ -39,12 +39,13 @@ $('#searcher').on('keyup', function()
 			{
 					var results = $('#results');
 					
-					/*Remove the last nodes*/
+					/*Remove the last nodes
+			
+					Warning! We have to write it slowly in order to execute the event with our last query.
+					If we write fast meanwhile we are writting the last event has not ended yet so our actually query event will not be executed.
+					This issue can be parsed by loading all results in an array. */
 					
-					while (results.firstChild)
-					{
-						results.removeChild(results.firstChild);
-					}
+					results.empty(); 
 					
 					/* We add the results to the select */
 					
@@ -90,7 +91,12 @@ $('#searcher').on('keyup', function()
 		$('.scrollable-results').css('display', 'none');
 });
 
+
+/*Make the post of the location searched to the map view*/
+
 $('#results').on('click','option',function() 
 {
-	document.location = 'mapa.html?lat=1&lng=2&inner=' + this.innerHTML; 
+	$("#lng").val(geojson[this.value].lon);
+	$("#lat").val(geojson[this.value].lat);
+	$("#form").submit();
 });

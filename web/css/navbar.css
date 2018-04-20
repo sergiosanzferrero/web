@@ -10,6 +10,11 @@ and open the template in the editor.
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css") print;
 
+html, body 
+{
+   height: 100%;
+}
+
 a.rnav
 {
         text-align: center !important;
@@ -47,6 +52,7 @@ a.rnav-last
     padding:0; 
     margin:0 auto; 
     width:90%;
+	height:100%;
 }
 
 .secundario
@@ -54,6 +60,7 @@ a.rnav-last
     padding: 0; 
     margin: 0 auto; 
     width: 100%;
+	height:80%;
 }
 
 .navbar

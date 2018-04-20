@@ -1,8 +1,8 @@
 
-var lat;
-var lng;
 var marker;
 var lastMarker;
+
+/*When the map is clicked it loads the value of imput lat and lng in the form*/
 
 map.on('click', function(e)
 {
@@ -11,10 +11,7 @@ map.on('click', function(e)
 	
     marker = new L.marker(e.latlng);
 	map.addLayer(marker);
-
-	lat = marker.getLatLng().lat;
-	lng = marker.getLatLng().lng;
-	$('#lat').val(lat);
-	$('#lng').val(lng);
+	$('#lat').val(marker.getLatLng().lat);
+	$('#lon').val(marker.getLatLng().lng);
 	lastMarker = marker;
 });
