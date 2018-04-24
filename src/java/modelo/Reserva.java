@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author sergiosanzferrero
+ * @author 
  */
 public class Reserva {
     private String id;
