@@ -24,7 +24,7 @@ import modelo.Usuario;
 @WebServlet(name = "ControlUsuario", urlPatterns = {"/ControlUsuario"})
 public class ControlUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- System.out.println("Control Usuario");
+
 // get parameters from the request
         String dni = request.getParameter("dni");
         String nombre = request.getParameter("nombre");

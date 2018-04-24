@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import modelo.Parking;
 
 /**
@@ -42,18 +43,20 @@ public class ParkingBD {
     
     }
     
-    public static Parking selectParking(String ciudad) {
+  
+    
+      public static ArrayList<Parking> selectParkings() {
+        ArrayList<Parking> parkings = new ArrayList<Parking>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection(); 
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String query = "SELECT * FROM parking WHERE ciudad=?"; 
+        String query = "SELECT * FROM plaza"; 
         try {
                 ps = connection.prepareStatement(query);
-                ps.setString(1, ciudad);
                 rs = ps.executeQuery();
                 Parking parking=null;
-                if (rs.next()) {
+                while (rs.next()) {
                     parking = new Parking(); 
                     parking.setId(rs.getString("id"));
                     parking.setCiudad(rs.getString("ciudad"));
@@ -61,18 +64,19 @@ public class ParkingBD {
                     parking.setDescripcion(rs.getString("descripcion"));
                     parking.setTipo(rs.getString("tipo"));
                     parking.setImg(rs.getString("img"));
+                    parkings.add(parking);
 
 
                 }
                 rs.close();
                 ps.close(); 
                 pool.freeConnection(connection); 
-                return parking;
+                return parkings;
             } catch (SQLException e) { 
                 e.printStackTrace();
                 return null;
             }
         
-        }   
+        }  
     
 }
