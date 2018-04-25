@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import BD.UsuarioBD;
+import BD.UsuariosBD;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -22,7 +22,7 @@ import modelo.Usuario;
  * @author sergiosanzferrero
  */
 @WebServlet(name = "ControlUsuario", urlPatterns = {"/ControlUsuario"})
-public class ControlUsuario extends HttpServlet {
+public class ControladorUsuarios extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 // get parameters from the request
@@ -36,14 +36,14 @@ public class ControlUsuario extends HttpServlet {
         Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
 
         String url="";
-        if(UsuarioBD.existeUsuario(usuario.getDni())){
+        if(UsuariosBD.existeUsuario(usuario.getDni())){
             System.out.println("existe");
             url="mapa.html";
         }
         else{
             System.out.println("no existe");
         url = "registro.jsp"; 
-        UsuarioBD.insert(usuario);
+        UsuariosBD.insert(usuario);
         HttpSession session = request.getSession(); 
         session.setAttribute("usuario", usuario);   
         }

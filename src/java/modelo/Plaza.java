@@ -3,35 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
-/**
- *
- * @author sergiosanzferrero
- */
-public class Parking {
+public class Plaza {
     private String id;
-    private String ciudad;
-    private String calle;
+    private String direccion;
+    private Double latitud;
+    private Double longitud;
     private String tipo;
     private String descripcion;
     private String img;
     
 
-    public Parking(){
-        id="";
-        ciudad="";
-        calle="";
-        tipo="";
-        descripcion="";
-        img="";
+    public Plaza(){
 
     }
 
-    public Parking(String id, String ciudad, String calle, String tipo, String descripcion, String img) {
+    public Plaza(String id, String direccion, Double latitud, Double longitud, String tipo, String descripcion, String img) {
         this.id = id;
-        this.ciudad = ciudad;
-        this.calle = calle;
+        this.direccion = direccion;
+        this.latitud = latitud;
+        this.longitud = longitud;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.img = img;
@@ -45,20 +38,28 @@ public class Parking {
         this.id = id;
     }
 
-    public String getCiudad() {
-        return ciudad;
+        public String getDireccion() {
+        return direccion;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getCalle() {
-        return calle;
+     public Double getLatitud() {
+        return latitud;
     }
 
-    public void setCalle(String calle) {
-        this.calle = calle;
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+    
+     public Double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
     }
 
     public String getTipo() {
@@ -84,9 +85,5 @@ public class Parking {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
-    
-    
     
 }

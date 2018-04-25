@@ -1,3 +1,9 @@
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="modelo.Plaza" %>
+<% ArrayList<Plaza> plazas = (ArrayList<Plaza>) session.getAttribute("plazas"); %>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -35,8 +41,8 @@ and open the template in the editor.
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="mapa">Buscar plaza</a></li>
-                        <li><a href="publicar">Publicar plaza</a></li>
+                        <li><a href="mapa.html">Buscar plaza</a></li>
+                        <li><a href="publicar.html">Publicar plaza</a></li>
                         <li><a href="perfil.html">Perfil</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -53,6 +59,7 @@ and open the template in the editor.
             </nav>
 			<div class="row container secundario">
 				<h2>Publicar plaza</h2>
+                                
 				<div class="container col-sm-6" style="margin:0;padding:0;padding-right:1em;height:90%;">
 					<form action="/publicar.jsp" id="mySearcher" method="POST" style="height:100%">
 				<div class="form-group">

@@ -15,3 +15,22 @@ map.on('click', function(e)
 	$('#lon').val(marker.getLatLng().lng);
 	lastMarker = marker;
 });
+
+/*When the user uploads an image his name is putted on the box*/
+
+$('#file-upload').change(function() 
+{
+	var file = $('#file-upload')[0].files[0].name;
+	$(this).prev('label').text(file);
+});
+
+$('#tamanio-sel').on('click','option',function() 
+{
+	$('#tamanio').val(this.innerHTML);
+});
+
+$('#horario-sel').on('click','option',function() 
+{
+	$('#horario').val(this.innerHTML);
+});
+

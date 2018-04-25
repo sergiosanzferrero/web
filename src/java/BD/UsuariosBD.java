@@ -14,13 +14,13 @@ import modelo.Usuario;
  *
  * @author sergiosanzferrero
  */
-public class UsuarioBD {
+public class UsuariosBD {
 
     
 public static int insert(Usuario usuario) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO usuario (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
+    String query="INSERT INTO usuarios (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
     PreparedStatement ps = null;
   try {
         ps = connection.prepareStatement(query); 
@@ -46,7 +46,7 @@ public static boolean existeUsuario(String dni) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT dni FROM usuario WHERE dni = ? ";
+    String query = "SELECT dni FROM usuarios WHERE dni = ? ";
     
     try { 
         ps = connection.prepareStatement(query); 
