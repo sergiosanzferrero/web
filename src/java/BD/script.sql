@@ -43,8 +43,8 @@ CREATE TABLE publicaciones
     precioSemana float,
     horario VARCHAR(50),
     PRIMARY KEY (id,dni),
-    FOREIGN KEY (id) references plaza(id),
-    FOREIGN KEY (dni) references usuario(dni)
+    FOREIGN KEY (id) references plazas(id),
+    FOREIGN KEY (dni) references usuarios(dni)
 );
 
 CREATE TABLE reservas
@@ -54,8 +54,8 @@ CREATE TABLE reservas
     fechaInicio VARCHAR(50),
     fechaFin VARCHAR(50),
     PRIMARY KEY(id,dni,fechaInicio),
-    FOREIGN KEY (id) references plaza(id),
-    FOREIGN KEY (dni) references usuario(dni)
+    FOREIGN KEY (id) references plazas(id),
+    FOREIGN KEY (dni) references usuarios(dni)
 );
 
 /*Añadimos usuarios*/
