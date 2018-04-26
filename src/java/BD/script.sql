@@ -40,7 +40,7 @@ CREATE TABLE plazas
 
 CREATE TABLE reservas
 (
-    id VARCHAR(50),
+    id INT,
     dni VARCHAR(50),
     fechaInicio VARCHAR(50),
     fechaFin VARCHAR(50),
@@ -68,6 +68,6 @@ insert into publicaciones values('3','11159437S',4,20,'Todas las mañanas de tod
 insert into publicaciones values('4','14278937W',5,25,'Todos los dias, a cualquier horario');
 
 /*Añadimos reservas realizadas*/
-insert into reservas values('4','71156437P','12-06-2018','18-06-2018');
-insert into reservas values('3','71456778E','15-05-2018','23-05-2018');
+insert into reservas values('1','71156437P','12-06-2018','18-06-2018');
+insert into reservas values('2','71456778E','15-05-2018','23-05-2018');
 
