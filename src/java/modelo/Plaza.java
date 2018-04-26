@@ -5,8 +5,9 @@
  */
 
 package modelo;
+import java.io.Serializable;
 
-public class Plaza {
+public class Plaza implements Serializable{
     private String id;
     private String direccion;
     private Double latitud;

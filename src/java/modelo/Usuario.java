@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package modelo;
+import java.io.Serializable;
 
 /**
  *
  * @author sergiosanzferrero
  */
-public class Usuario {
+public class Usuario implements Serializable{
     private String dni;
     private String nombre;
     private String apellidos;
