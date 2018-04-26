@@ -20,10 +20,21 @@ import modelo.Reserva;
  *
  * @author 
  */
-@WebServlet(name = "ControlReserva", urlPatterns = {"/ControlReserva"})
+@WebServlet(name = "ControlReserva", urlPatterns = {"/ControlReserva", "/Reservar"})
 public class ControladorReservas extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doGet(request, response);
+            //doGet(request, response);
+            String url="perfil.html";
+            
+            String id = request.getParameter("id");
+            String dni = request.getParameter("dni");
+            String fechaInicio = request.getParameter("fecha_llegada");
+            String fechaFin = request.getParameter("fecha_salida");
+                 Reserva reserva=new Reserva(id,dni,fechaInicio,fechaFin);
+                 ReservasBD.insert(reserva);
+                 
+                      request.getRequestDispatcher(url).forward(request, response);
+                 
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 

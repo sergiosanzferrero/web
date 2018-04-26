@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package BD;
+
 import java.sql.*;
 import java.util.ArrayList;
 import modelo.Reserva;
@@ -21,7 +22,7 @@ public class ReservasBD {
 public static int insert(Reserva reserva) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFina) VALUES (?, ?, ?, ?)";
+    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin) VALUES (?, ?, ?, ?)";
     PreparedStatement ps = null;
   try {
         ps = connection.prepareStatement(query); 
