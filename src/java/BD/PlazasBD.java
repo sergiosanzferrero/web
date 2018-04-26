@@ -21,21 +21,21 @@ public class PlazasBD
     {   
         ConnectionPool pool = ConnectionPool.getInstance(); 
         Connection connection = pool.getConnection();
-        String query="INSERT INTO plazas (id,dni,direccion,tipo,latitud, longitud, descripcion,precioDia,img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query="INSERT INTO plazas (dni,direccion,tipo,latitud, longitud, descripcion,precioDia,img) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         
         try 
         {
             ps = connection.prepareStatement(query); 
-            ps.setString(1, plaza.getId()); 
-            ps.setString(2, plaza.getDni());
-            ps.setString(3, plaza.getDireccion()); 
-            ps.setString(4, plaza.getTipo()); 
-            ps.setString(5, plaza.getLatitud().toString());  
-            ps.setString(6, plaza.getLongitud().toString());  
-            ps.setString(7, plaza.getDescripcion()); 
-            ps.setString(8, plaza.getPrecioDia().toString()); 
-            ps.setString(9, plaza.getImg()); 
+            //ps.setString(1, plaza.getId()); 
+            ps.setString(1, plaza.getDni());
+            ps.setString(2, plaza.getDireccion()); 
+            ps.setString(3, plaza.getTipo()); 
+            ps.setString(4, plaza.getLatitud().toString());  
+            ps.setString(5, plaza.getLongitud().toString());  
+            ps.setString(6, plaza.getDescripcion()); 
+            ps.setString(7, plaza.getPrecioDia().toString()); 
+            ps.setString(8, plaza.getImg()); 
             int res = ps.executeUpdate();
             ps.close(); 
             pool.freeConnection(connection);
@@ -68,7 +68,7 @@ public class PlazasBD
             while (rs.next()) 
             {
                 plaza = new Plaza(); 
-                plaza.setId(rs.getString("id"));
+                //plaza.setId(rs.getString("id"));
                 plaza.setDni(rs.getString("dni"));
                 plaza.setDireccion(rs.getString("direccion"));
                 plaza.setLatitud(rs.getDouble("latitud"));

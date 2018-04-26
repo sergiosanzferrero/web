@@ -39,7 +39,7 @@ public class ControladorPlazas extends HttpServlet
         {
             url = "publicar.jsp"; 
             
-            String id = request.getParameter("id");
+            //String id = request.getParameter("id");
             String direccion = request.getParameter("direccion");
             Double latitud = Double.parseDouble(request.getParameter("latitud"));
             Double longitud = Double.parseDouble(request.getParameter("latitud"));
@@ -52,7 +52,7 @@ public class ControladorPlazas extends HttpServlet
             Float precioDia = Float.parseFloat(request.getParameter("precioDia"));
             /*Pendiente de implementación*/
             
-            Plaza plaza=new Plaza(id,dni,direccion,tipo,latitud,longitud,descripcion,precioDia,img);
+            Plaza plaza=new Plaza(dni,direccion,tipo,latitud,longitud,descripcion,precioDia,img);
             PlazasBD.insert(plaza);
             HttpSession session = request.getSession(); 
             session.setAttribute("parking", plaza);   

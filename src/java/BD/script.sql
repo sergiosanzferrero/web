@@ -25,7 +25,7 @@ CREATE TABLE usuarios
 
 CREATE TABLE plazas
 (
-    id VARCHAR (50),
+    id INT AUTO_INCREMENT,
     dni VARCHAR(50),
     direccion VARCHAR (300),
     tipo VARCHAR (50),

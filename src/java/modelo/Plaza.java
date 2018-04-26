@@ -8,7 +8,7 @@ package modelo;
 import java.io.Serializable;
 
 public class Plaza implements Serializable{
-    private String id;
+    //private String id;
     private String dni;
     private String direccion;
     private String tipo;
@@ -23,8 +23,8 @@ public class Plaza implements Serializable{
 
     }
 
-    public Plaza(String id, String dni, String direccion, String tipo, Double latitud, Double longitud,   String descripcion, Float precioDia, String img) {
-        this.id = id;
+    public Plaza(String dni, String direccion, String tipo, Double latitud, Double longitud,   String descripcion, Float precioDia, String img) {
+        //this.id = id;
         this.dni = dni;
         this.direccion = direccion;
         this.latitud = latitud;
@@ -35,13 +35,7 @@ public class Plaza implements Serializable{
         this.img = img;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
         public String getDireccion() {
         return direccion;
