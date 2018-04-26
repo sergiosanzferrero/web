@@ -46,8 +46,13 @@ public class ControladorPlazas extends HttpServlet
             String tipo = request.getParameter("tipo");
             String descripcion = request.getParameter("descripcion");
             String img = request.getParameter("img");/* Recibe la imagen en multipart form data en array de bytes*/
-
-            Plaza plaza=new Plaza(id,direccion,latitud,longitud,tipo,descripcion,img);
+            
+            /*Pendiente de implementacion*/
+            String dni = request.getParameter("dni");
+            Float precioDia = Float.parseFloat(request.getParameter("precioDia"));
+            /*Pendiente de implementación*/
+            
+            Plaza plaza=new Plaza(id,dni,direccion,tipo,latitud,longitud,descripcion,precioDia,img);
             PlazasBD.insert(plaza);
             HttpSession session = request.getSession(); 
             session.setAttribute("parking", plaza);   

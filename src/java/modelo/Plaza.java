@@ -9,11 +9,13 @@ import java.io.Serializable;
 
 public class Plaza implements Serializable{
     private String id;
+    private String dni;
     private String direccion;
+    private String tipo;
     private Double latitud;
     private Double longitud;
-    private String tipo;
     private String descripcion;
+    private Float precioDia;
     private String img;
     
 
@@ -21,12 +23,14 @@ public class Plaza implements Serializable{
 
     }
 
-    public Plaza(String id, String direccion, Double latitud, Double longitud, String tipo, String descripcion, String img) {
+    public Plaza(String id, String dni, String direccion, String tipo, Double latitud, Double longitud,   String descripcion, Float precioDia, String img) {
         this.id = id;
+        this.dni = dni;
         this.direccion = direccion;
         this.latitud = latitud;
         this.longitud = longitud;
         this.tipo = tipo;
+        this.precioDia = precioDia;
         this.descripcion = descripcion;
         this.img = img;
     }
@@ -85,6 +89,34 @@ public class Plaza implements Serializable{
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    /**
+     * @return the dni
+     */
+    public String getDni() {
+        return dni;
+    }
+
+    /**
+     * @param dni the dni to set
+     */
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    /**
+     * @return the precioDia
+     */
+    public Float getPrecioDia() {
+        return precioDia;
+    }
+
+    /**
+     * @param precioDia the precioDia to set
+     */
+    public void setPrecioDia(Float precioDia) {
+        this.precioDia = precioDia;
     }
     
 }
