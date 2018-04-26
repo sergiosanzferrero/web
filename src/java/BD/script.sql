@@ -26,24 +26,15 @@ CREATE TABLE usuarios
 CREATE TABLE plazas
 (
     id VARCHAR (50),
+    dni VARCHAR(50),
     direccion VARCHAR (300),
     tipo VARCHAR (50),
     latitud DECIMAL(10, 8),
     longitud DECIMAL(11, 8),
     descripcion VARCHAR (1000),
-    img VARCHAR (100),
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE publicaciones
-(
-    id VARCHAR(50),
-    dni VARCHAR(50),
     precioDia float,
-    precioSemana float,
-    horario VARCHAR(50),
+    img VARCHAR (100),
     PRIMARY KEY (id,dni),
-    FOREIGN KEY (id) references plazas(id),
     FOREIGN KEY (dni) references usuarios(dni)
 );
 
