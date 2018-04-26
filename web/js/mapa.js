@@ -45,8 +45,8 @@ var HttpClient = function()
 }
 
 
-/*Check if the formulary options are correct before to make the POST*/
-
+/*ANULADO - Check if the formulary options are correct before to make the POST*/
+/*
 $(function()
 {
     $('#mySearcher').on('submit', function(e) 
@@ -64,6 +64,7 @@ $(function()
 		map.setView([selectedLocation.lat, selectedLocation.lon], 20);
     });
 });
+*/
 
 
 /*Event to search the results meanwhile the user is writting the query*/

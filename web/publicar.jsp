@@ -60,7 +60,7 @@ and open the template in the editor.
 				<h2>Publicar plaza</h2>
                                 
 				<div class="container col-sm-6" style="margin:0;padding:0;padding-right:1em;height:90%;">
-					<form action="/publicar" id="mySearcher" method="POST" style="height:100%">
+					<form action="publicar" id="mySearcher" method="POST" style="height:100%">
 				<div class="form-group">
 					<div class="row" style="margin-left:0;padding-right:1em;">
 						<div class="col-md-6" style="margin:0;padding:0;padding-right:1em;"> 
@@ -89,7 +89,7 @@ and open the template in the editor.
 						<div class="col-md-3" style="margin-left:0;padding:0;padding-right:1em;margin-bottom:1em;"> 
 							<label for="sel1">Tamaño:</label>
 							<input id="tamanio" value="Coche" hidden required>
-							<select class="form-control" id="tamanio-sel">
+							<select class="form-control" name="tipo" id="tamanio-sel">
 								<option>Coche</option>
 								<option>Moto</option>
 								<option>Furgoneta</option>
@@ -109,12 +109,13 @@ and open the template in the editor.
 						<input class="form-control" type="text" id="imagen" name="precio" placeholder="€" required>
 													
 						</div>
+                                            <input type="hidden" name="dni" value="11159437S">
 						<div class="col-md-3" style="margin-left:0;padding:0;padding-right:1em;padding-left:0;margin-bottom:1em;"> 
 						<label style="margin-bottom:0.5em;"> Imagen: </label><br>
 							<label for="file-upload" class="btn btn-default" style="width:100%">
 								Subir imagen
 							</label>
-							<input id="file-upload" name='file-upload' type="file" style="display:none;" required>
+							<input id="file-upload" name='file-upload' type="file" style="display:none;">
 						</div>
 					</div>
 					
@@ -140,6 +141,6 @@ and open the template in the editor.
             </footer>  
       </div>
 	  <script src="js/mapa.js"></script>
-	  <script src="js/publicar.js"></script>
+	  <!--<script src="js/publicar.js"></script>-->
     </body>
 </html>

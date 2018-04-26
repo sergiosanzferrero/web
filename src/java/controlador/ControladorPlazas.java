@@ -37,19 +37,20 @@ public class ControladorPlazas extends HttpServlet
         /*Cuando envia formulario de publicacion de plaza*/
         else if(path.contains("publicar"))
         {
-            url = "publicar.jsp"; 
-            
+            // MODIFICADA url de publiar.jsp a mapa.html
+            url = "mapa.html"; 
+            System.out.println("PLAZA PUBLICADA");
             //String id = request.getParameter("id");
-            String direccion = request.getParameter("direccion");
-            Double latitud = Double.parseDouble(request.getParameter("latitud"));
-            Double longitud = Double.parseDouble(request.getParameter("latitud"));
+            String direccion = request.getParameter("searcher");
+            Double latitud = Double.parseDouble(request.getParameter("lat"));
+            Double longitud = Double.parseDouble(request.getParameter("lon"));
             String tipo = request.getParameter("tipo");
             String descripcion = request.getParameter("descripcion");
             String img = request.getParameter("img");/* Recibe la imagen en multipart form data en array de bytes*/
             
             /*Pendiente de implementacion*/
             String dni = request.getParameter("dni");
-            Float precioDia = Float.parseFloat(request.getParameter("precioDia"));
+            Float precioDia = Float.parseFloat(request.getParameter("precio"));
             /*Pendiente de implementación*/
             
             Plaza plaza=new Plaza(dni,direccion,tipo,latitud,longitud,descripcion,precioDia,img);
