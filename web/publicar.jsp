@@ -40,7 +40,7 @@ and open the template in the editor.
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="mapa.html">Buscar plaza</a></li>
+                        <li><a href="mapa">Buscar plaza</a></li>
                         <li><a href="publicar.html">Publicar plaza</a></li>
                         <li><a href="perfil.html">Perfil</a></li>
                     </ul>
@@ -140,7 +140,7 @@ and open the template in the editor.
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
       </div>
-	  <script src="js/mapa.js"></script>
+	  <script src="js/mapa2.js"></script>
 	  <!--<script src="js/publicar.js"></script>-->
     </body>
 </html>

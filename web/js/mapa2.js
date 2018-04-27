@@ -45,25 +45,6 @@ var HttpClient = function()
 }
 
 
-/* Check if the formulary options are correct before to make the POST*/
-
-$(function()
-{
-    $('#mySearcher').on('submit', function(e) 
-    {
-        e.preventDefault();
-		if(!isLocationSelected)
-		{
-			alert("there is not selected location");
-			return;
-		}
-		
-		$('#carousel').css('display', 'none');
-		$('.items').css('display', 'block');
-		$('.scrollable-items').css('overflow-y', 'scroll');
-		map.setView([selectedLocation.lat, selectedLocation.lon], 20);
-    });
-});
 
 
 
@@ -173,4 +154,3 @@ $('.clean-search-button').click(function()
 
 	map.setView([40, 4], 3);
 });
-
