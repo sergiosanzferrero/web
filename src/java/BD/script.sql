@@ -56,16 +56,11 @@ insert into usuarios values('11159437S','Jaime','Sanz Martin','pedroduque@gmail.
 insert into usuarios values('14278937W','Pedra','Duque Perez','pedro@gmail.com','duquegar','612345678');
 
 /*Añadimos plazas*/
-insert into plazas values('1','Miguel Delibes 8, Valladolid','camion',40.71727401, -74.00898606,'Plaza para camiones en las afueras de Valladolid','/Imagenes/plazas/parking1.jpg');
-insert into plazas values('2','Plaza Zorrilla 6, Valladolid','moto',40.71727401, -74.00898606,'Plaza para moto','/Imagenes/plazas/parking2.jpg');
-insert into plazas values('3','Gran Via 2, Madrid','coche',40.71727401, -74.00898606,'Plaza situada en el centro de Madrid, imposible encontrar sitio por alrededor','/Imagenes/plazas/parking3.jpg');
-insert into plazas values('4','Plaza Mayor 4, Valladolid','coche',40.71727401, -74.00898606,'Plaza amplian en pleno centro','/Imagenes/plazas/parking4.jpg');
+insert into plazas values(0,'71156437P','Miguel Delibes 8, Valladolid','camion',40.71727401, -74.00898606,'Plaza para camiones en las afueras de Valladolid',20,'/Imagenes/plazas/parking1.jpg');
+insert into plazas values(0,'71156437P','Plaza Zorrilla 6, Valladolid','moto',40.71727401, -74.00898606,'Plaza para moto',30,'/Imagenes/plazas/parking2.jpg');
+insert into plazas values(0,'11159437S','Gran Via 2, Madrid','coche',40.71727401, -74.00898606,'Plaza situada en el centro de Madrid, imposible encontrar sitio por alrededor',40,'/Imagenes/plazas/parking3.jpg');
+insert into plazas values(0,'11159437S','Plaza Mayor 4, Valladolid','coche',40.71727401, -74.00898606,'Plaza amplian en pleno centro',40,'/Imagenes/plazas/parking4.jpg');
 
-/*Añadimos publicaciones*/
-insert into publicaciones values('1','71156437P',12,50,'8:00-14:00');
-insert into publicaciones values('2','71456778E',10,50,'Todo el dia, menos los fines de semana');
-insert into publicaciones values('3','11159437S',4,20,'Todas las mañanas de todos los dias');
-insert into publicaciones values('4','14278937W',5,25,'Todos los dias, a cualquier horario');
 
 /*Añadimos reservas realizadas*/
 insert into reservas values('1','71156437P','12-06-2018','18-06-2018');
