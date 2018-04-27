@@ -1,0 +1,19 @@
+
+-Falta hacer el jsp de buscar plazas, se puede hacer de dos maneras
+o cargandolo con js (mejor) o recargando la pagina con los resultados.
+
+-Falta poner soporte para subir imagenes con multipartformdata en el form,
+y permitirles subir imagenes con required, tambien eliminar el dni del formulario
+de publicar plaza, pues se sacara con las cookies de sesion desde el controlador,
+ese dato no hay que meterlo en el formulario.
+
+-hay que crear un jsp de perfil que permita modificar datos del usuario como contacto,
+nombre, apellidos, y dni, que permita verlos y modificarlos.
+
+-habria que quitar cambiar en la base de datos las fechas que son string por date, pero 
+solo en caso de que vayamos a validarlas sino nos es indiferente con almacenar el texto
+nos vale, como la validacion no es importante y urgen otras cosas por ahora dejarlo asi.
+si que facilitaria en buscar plazas cambiar tipo por un enum en vez de por un string.
+
+-hay que dar soporte a usuarios, que inicien sesion y eso tambien afecta al menu que se muestra
+en el nav, tambien hay que crear al menos un pequeño html para reditigir en caso de error.
