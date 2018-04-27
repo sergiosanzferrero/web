@@ -140,7 +140,7 @@ and open the template in the editor.
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </footer>  
       </div>
-	  <script src="js/mapa2.js"></script>
-	  <!--<script src="js/publicar.js"></script>-->
+	  <script src="js/mapa.js"></script>
+	  <script src="js/publicar.js"></script>
     </body>
 </html>

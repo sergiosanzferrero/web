@@ -51,17 +51,20 @@ $(function()
 {
     $('#mySearcher').on('submit', function(e) 
     {
-        e.preventDefault();
-		if(!isLocationSelected)
-		{
-			alert("there is not selected location");
-			return;
-		}
-		
-		$('#carousel').css('display', 'none');
-		$('.items').css('display', 'block');
-		$('.scrollable-items').css('overflow-y', 'scroll');
-		map.setView([selectedLocation.lat, selectedLocation.lon], 20);
+        if(window.location.href.search('mapa') > 0)
+	{
+            e.preventDefault();
+            if(!isLocationSelected)
+            {
+                    alert("there is not selected location");
+                    return;
+            }
+
+            $('#carousel').css('display', 'none');
+            $('.items').css('display', 'block');
+            $('.scrollable-items').css('overflow-y', 'scroll');
+            map.setView([selectedLocation.lat, selectedLocation.lon], 20);
+        }
     });
 });
 
