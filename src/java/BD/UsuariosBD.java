@@ -116,6 +116,31 @@ public static boolean login(String dni, String password) {
     }
 }
 
+public static void editaPerfil(Usuario usuario) { 
+    ConnectionPool pool = ConnectionPool.getInstance();
+    Connection connection = pool.getConnection(); 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    String query = "UPDATE usuario SET email=?,telefono=?,password=? WHERE dni=?";
+    
+    try { 
+        ps = connection.prepareStatement(query); 
+        ps.setString(1, usuario.getEmail());
+        ps.setString(2,usuario.getTelefono());
+        ps.setString(3,usuario.getPassword());
+        ps.setString(4,usuario.getDni());
+        rs = ps.executeQuery();
+      
+        rs.close();
+        ps.close(); 
+        pool.freeConnection(connection); 
+        
+    } catch (SQLException e) { 
+        e.printStackTrace();
+       
+    }
+}
+
 
 }
 

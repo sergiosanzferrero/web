@@ -52,10 +52,11 @@ and open the template in the editor.
                 <p>Teléfono de contacto: <%=usuario.getTelefono()%></p>
             </div>
         </div>
-        <hr>
-        <footer>
-        <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
-        </footer>  
-     </div>
+            <form action="editarPerfil.jsp">
+                <button type="submit" class="btn btn-default">Editar Perfil</button>            
+            </form>
+        
+  
+     
     </body>
 </html>
