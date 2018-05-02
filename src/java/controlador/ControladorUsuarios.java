@@ -36,7 +36,7 @@ public class ControladorUsuarios extends HttpServlet {
         Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
 
         String url="";
-        if(UsuariosBD.existeUsuario(usuario.getDni())){
+        if(UsuariosBD.existeUsuario(usuario.getEmail())){
             url="mapa.html";
         }
         else{

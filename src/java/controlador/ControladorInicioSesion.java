@@ -39,6 +39,10 @@ public class ControladorInicioSesion extends HttpServlet {
         else{
         url = "errorLogin.html"; 
         }
+        
+        Usuario usuario=UsuariosBD.seleccionaUsuario(email);
+        HttpSession session = request.getSession(); 
+        session.setAttribute("login", usuario);
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
         request.getRequestDispatcher(url).forward(request, response);

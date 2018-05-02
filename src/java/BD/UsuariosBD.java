@@ -41,16 +41,16 @@ public static int insert(Usuario usuario) {
     }
     
 }
-public static boolean existeUsuario(String dni) { 
+public static boolean existeUsuario(String email) { 
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT dni FROM usuario WHERE dni = ? ";
+    String query = "SELECT dni FROM usuario WHERE email = ? ";
     
     try { 
         ps = connection.prepareStatement(query); 
-        ps.setString(1, dni);
+        ps.setString(1, email);
         rs = ps.executeQuery();
         boolean res = rs.next();
         rs.close();
@@ -62,16 +62,16 @@ public static boolean existeUsuario(String dni) {
         return false; 
     }
 }
-public static Usuario seleccionaUsuario(String dni) { 
+public static Usuario seleccionaUsuario(String email) { 
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT * FROM usuario WHERE dni = ?";
+    String query = "SELECT * FROM usuario WHERE email = ?";
     
     try { 
         ps = connection.prepareStatement(query); 
-        ps.setString(1, dni);
+        ps.setString(1, email);
         rs = ps.executeQuery();
         Usuario usuario=null;
         if (rs.next()) {
