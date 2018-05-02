@@ -38,7 +38,7 @@ public class ControladorPlazas extends HttpServlet
         else if(path.contains("publicar"))
         {
             // MODIFICADA url de publiar.jsp a mapa.html
-            url = "mapa.html"; 
+            url = "mapa.jsp"; 
             System.out.println("PLAZA PUBLICADA");
             //String id = request.getParameter("id");
             String direccion = request.getParameter("searcher");

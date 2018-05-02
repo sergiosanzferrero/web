@@ -37,7 +37,7 @@ public class ControladorUsuarios extends HttpServlet {
 
         String url="";
         if(UsuariosBD.existeUsuario(usuario.getEmail())){
-            url="mapa.html";
+            url="mapa.jsp";
         }
         else{
         url = "registro.jsp"; 

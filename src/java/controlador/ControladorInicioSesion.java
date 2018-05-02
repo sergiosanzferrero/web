@@ -34,7 +34,7 @@ public class ControladorInicioSesion extends HttpServlet {
 
         String url="";
         if(UsuariosBD.login(email,password)){
-            url="mapa.html";
+            url="mapa.jsp";
         }
         else{
         url = "errorLogin.html"; 

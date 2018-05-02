@@ -33,17 +33,24 @@ and open the template in the editor.
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.jsp">
                             <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="mapa">Buscar plaza</a></li>
-                        <li><a href="publicar.html">Publicar plaza</a></li>
-                        <li><a href="perfil.html">Perfil</a></li>
+                        <li class="active"><a href="index.jsp">Inicio</a></li>
+                        <li><a href="mapa.jsp">Buscar plaza</a></li>
+                        <li><a href="publicar.jsp">Publicar plaza</a></li>
+                       
+                         <%@ page import="modelo.Usuario" %>
+                        <%Usuario usuario= (Usuario) session.getAttribute("login");
+                        if(usuario!=null){%>
+                        <li><a href="perfil.jsp">Perfil</a></li>
+                        <%}%>
                     </ul>
+                        
+                    <% if(usuario==null){%>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
@@ -53,6 +60,7 @@ and open the template in the editor.
                         </ul>
                         </li>
                     </ul>
+                     <%} %>        
                     </div>
                 </div>
             </nav>

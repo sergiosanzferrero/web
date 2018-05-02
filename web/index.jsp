@@ -38,17 +38,25 @@ and open the template in the editor.
                         <li class="active"><a href="index.jsp">Inicio</a></li>
                         <li><a href="mapa.jsp">Buscar plaza</a></li>
                         <li><a href="publicar.jsp">Publicar plaza</a></li>
-                 
+                       
+                         <%@ page import="modelo.Usuario" %>
+                        <%Usuario usuario= (Usuario) session.getAttribute("login");
+                        if(usuario!=null){%>
+                        <li><a href="perfil.jsp">Perfil</a></li>
+                        <%}%>
                     </ul>
+                        
+                    <% if(usuario==null){%>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="login.html">Iniciar sesiÃ³n</a></li>
+                            <li><a href="login.html">Iniciar sesión</a></li>
                             <li><a href="registro.html">Registrarse</a></li>
                         </ul>
                         </li>
                     </ul>
+                     <%} %>        
                     </div>
                 </div>
             </nav>
