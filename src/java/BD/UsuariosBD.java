@@ -20,7 +20,7 @@ public class UsuariosBD {
 public static int insert(Usuario usuario) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO usuario (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
+    String query="INSERT INTO usuarios (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
     PreparedStatement ps = null;
   try {
         ps = connection.prepareStatement(query); 
@@ -46,7 +46,7 @@ public static boolean existeUsuario(String email) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT dni FROM usuario WHERE email = ? ";
+    String query = "SELECT dni FROM usuarios WHERE email = ? ";
     
     try { 
         ps = connection.prepareStatement(query); 
@@ -67,7 +67,7 @@ public static Usuario seleccionaUsuario(String email) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT * FROM usuario WHERE email = ?";
+    String query = "SELECT * FROM usuarios WHERE email = ?";
     
     try { 
         ps = connection.prepareStatement(query); 
@@ -98,7 +98,7 @@ public static boolean login(String dni, String password) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT email,password FROM usuario WHERE (email = ? and password=?) ";
+    String query = "SELECT email,password FROM usuarios WHERE (email = ? and password=?) ";
     
     try { 
         ps = connection.prepareStatement(query); 
@@ -121,7 +121,7 @@ public static void editaPerfil(Usuario usuario) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "UPDATE usuario SET email=?,telefono=?,password=? WHERE dni=?";
+    String query = "UPDATE usuarios SET email=?,telefono=?,password=? WHERE dni=?";
     
     try { 
         ps = connection.prepareStatement(query); 

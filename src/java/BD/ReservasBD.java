@@ -22,7 +22,7 @@ public class ReservasBD {
 public static int insert(Reserva reserva) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO reserva (id,dni,fechaInicio,fechaFin) VALUES (?, ?, ?, ?)";
+    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin) VALUES (?, ?, ?, ?)";
     PreparedStatement ps = null;
   try {
         ps = connection.prepareStatement(query); 
@@ -48,7 +48,7 @@ public static int insert(Reserva reserva) {
         Connection connection = pool.getConnection(); 
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String query = "SELECT * FROM reserva"; 
+        String query = "SELECT * FROM reservas"; 
         try {
                 ps = connection.prepareStatement(query);
                 rs = ps.executeQuery();
