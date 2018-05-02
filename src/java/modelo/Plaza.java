@@ -15,6 +15,7 @@ public class Plaza implements Serializable{
     private Double latitud;
     private Double longitud;
     private String descripcion;
+    private String horario;
     private Float precioDia;
     private String img;
     
@@ -23,7 +24,7 @@ public class Plaza implements Serializable{
 
     }
 
-    public Plaza(String dni, String direccion, String tipo, Double latitud, Double longitud,   String descripcion, Float precioDia, String img) {
+    public Plaza(String dni, String direccion, String tipo, Double latitud, Double longitud,   String descripcion, String horario, Float precioDia, String img) {
         //this.id = id;
         this.dni = dni;
         this.direccion = direccion;
@@ -32,13 +33,14 @@ public class Plaza implements Serializable{
         this.tipo = tipo;
         this.precioDia = precioDia;
         this.descripcion = descripcion;
+        this.horario = horario;
         this.img = img;
     }
 
 
 
-        public String getDireccion() {
-        return direccion;
+    public String getDireccion() {
+    return direccion;
     }
 
     public void setDireccion(String direccion) {
@@ -75,6 +77,14 @@ public class Plaza implements Serializable{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 
     public String getImg() {

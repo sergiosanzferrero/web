@@ -17,3 +17,6 @@ si que facilitaria en buscar plazas cambiar tipo por un enum en vez de por un st
 
 -hay que dar soporte a usuarios, que inicien sesion y eso tambien afecta al menu que se muestra
 en el nav, tambien hay que crear al menos un pequeño html para reditigir en caso de error.
+
+-Modificada la base de datos, añadido una nueva columna en la tabla plazas  que es horario,
+de mañana de tarde o jornada completa.

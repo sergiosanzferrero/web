@@ -1,13 +1,13 @@
 
-/*Borramos tabla si existía anteriormente*/
+/*Borramos base de datos si existía anteriormente*/
 DROP DATABASE IF EXISTS cartimedb;
 
 
-/*Creamos la tabla*/
+/*Creamos la base de datos*/
 CREATE DATABASE cartimedb;
 
 
-/*Seleccionamos la tabla*/
+/*Seleccionamos la base de datos*/
 USE cartimedb;
 
 
@@ -32,6 +32,7 @@ CREATE TABLE plazas
     latitud DECIMAL(10, 8),
     longitud DECIMAL(11, 8),
     descripcion VARCHAR (1000),
+    horario VARCHAR (50),
     precioDia float,
     img VARCHAR (100),
     PRIMARY KEY (id,dni),
