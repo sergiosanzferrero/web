@@ -20,7 +20,7 @@ public class UsuariosBD {
 public static int insert(Usuario usuario) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO usuarios (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
+    String query="INSERT INTO usuario (dni,nombre,apellidos,email,password,telefono) VALUES (?, ?, ?, ?, ?, ?)";
     PreparedStatement ps = null;
   try {
         ps = connection.prepareStatement(query); 
@@ -46,7 +46,7 @@ public static boolean existeUsuario(String dni) {
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
     ResultSet rs = null;
-    String query = "SELECT dni FROM usuarios WHERE dni = ? ";
+    String query = "SELECT dni FROM usuario WHERE dni = ? ";
     
     try { 
         ps = connection.prepareStatement(query); 
@@ -91,6 +91,28 @@ public static Usuario seleccionaUsuario(String dni) {
     } catch (SQLException e) { 
         e.printStackTrace();
         return null; 
+    }
+}
+public static boolean login(String dni, String password) { 
+    ConnectionPool pool = ConnectionPool.getInstance();
+    Connection connection = pool.getConnection(); 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    String query = "SELECT email,password FROM usuario WHERE (email = ? and password=?) ";
+    
+    try { 
+        ps = connection.prepareStatement(query); 
+        ps.setString(1, dni);
+        ps.setString(2,password);
+        rs = ps.executeQuery();
+        boolean res = rs.next();
+        rs.close();
+        ps.close(); 
+        pool.freeConnection(connection); 
+        return res;
+    } catch (SQLException e) { 
+        e.printStackTrace();
+        return false; 
     }
 }
 

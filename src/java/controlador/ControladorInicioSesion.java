@@ -21,29 +21,23 @@ import modelo.Usuario;
  *
  * @author sergiosanzferrero
  */
-@WebServlet(name = "ControlUsuario", urlPatterns = {"/ControlUsuario"})
-public class ControladorUsuarios extends HttpServlet {
+@WebServlet(name = "ControladorInicioSesion", urlPatterns = {"/ControladorInicioSesion"})
+public class ControladorInicioSesion extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 // get parameters from the request
-        String dni = request.getParameter("dni");
-        String nombre = request.getParameter("nombre");
-        String apellidos = request.getParameter("apellidos");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String telefono = request.getParameter("telefono");
+        String password = request.getParameter("contrasena");
+     
         
-        Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
+       // Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
 
         String url="";
-        if(UsuariosBD.existeUsuario(usuario.getDni())){
+        if(UsuariosBD.login(email,password)){
             url="mapa.html";
         }
         else{
-        url = "registro.jsp"; 
-        UsuariosBD.insert(usuario);
-        HttpSession session = request.getSession(); 
-        session.setAttribute("usuario", usuario);   
+        url = "errorLogin.html"; 
         }
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
