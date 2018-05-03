@@ -72,7 +72,7 @@ and open the template in the editor.
 				<h2>Publicar plaza</h2>
                                 
 				<div class="container col-sm-6" style="margin:0;padding:0;padding-right:1em;height:90%;">
-					<form action="publicar" id="mySearcher" method="POST" style="height:100%" autocomplete="off">
+					<form action="publicar" id="mySearcher" method="POST" style="height:100%" autocomplete="off" enctype="multipart/form-data">
 				<div class="form-group">
 					<div class="row" style="margin-left:0;padding-right:1em;">
 						<div class="col-md-6" style="margin:0;padding:0;padding-right:1em;"> 
@@ -127,8 +127,10 @@ and open the template in the editor.
 							<label for="file-upload" class="btn btn-default" style="width:100%">
 								Subir imagen
 							</label>
-							<input id="file-upload" name='file-upload' type="file" style="display:none;">
+							<input id="file-upload" name="file-upload" type="file" style="display:none;">
 						</div>
+                                             
+                                              
 					</div>
 					
 					<div class="row" style="margin-left:0;padding-right:2em;">

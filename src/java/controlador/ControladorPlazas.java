@@ -6,17 +6,24 @@
 package controlador;
 
 import BD.PlazasBD;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import modelo.Plaza;
 
 @WebServlet(name = "ControladorPlazas", urlPatterns = {"/mapa", "/publicar"})
+@MultipartConfig
 public class ControladorPlazas extends HttpServlet 
 {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -50,7 +57,44 @@ public class ControladorPlazas extends HttpServlet
             String tipo = request.getParameter("tipo");
             String descripcion = request.getParameter("descripcion");
             String horario = request.getParameter("horario");
-            String img = request.getParameter("img");/* Recibe la imagen en multipart form data en array de bytes*/
+           // String img = request.getParameter("img");/* Recibe la imagen en multipart form data en array de bytes*/
+            
+            
+            String pathFile = getServletContext().getRealPath("/Imagenes/plazas");
+            Part filePart = request.getPart("file-upload");
+            String fileName=""; 
+            
+            int contador=0;
+            for (String cd : filePart.getHeader("content-disposition").split(";")) {
+                if (cd.trim().startsWith("filename")&& contador<1) {
+                    String fileName2 = cd.substring(cd.indexOf('=') + 1).trim().replace("\"","");
+                    fileName= fileName2.substring(fileName2.lastIndexOf('/')+1).substring(fileName2.lastIndexOf('\\')+1);
+                }
+            }
+            String img="/Imagenes/plazas/"+fileName;
+            
+                   
+            InputStream fileContent = filePart.getInputStream(); 
+            OutputStream outFile = null;
+            outFile = new FileOutputStream(new File(pathFile + File.separator + fileName)); 
+            int read = 0;
+            byte[] bytes = new byte[1024];
+            while ((read = fileContent.read(bytes)) != -1) { 
+                outFile.write(bytes, 0, read);
+            }
+            
+            if (outFile != null) { 
+                    outFile.close();
+            }
+            if (fileContent != null) { 
+                    fileContent.close();
+            }
+            
+            
+            
+            
+            
+            
             
             /*Pendiente de implementacion*/
             String dni = request.getParameter("dni");

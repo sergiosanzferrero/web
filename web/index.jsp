@@ -104,6 +104,10 @@ and open the template in the editor.
 				<p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
 				</footer>  
 			</div>
+                         <form action="Upload" method="post" enctype="multipart/form-data"> 
+                                                    <input type="file" name="file" />                                                  
+                                                    <input type="submit" /> 
+                                                </form>
 		<script src="js/index.js"></script>
     </body>
 </html>
