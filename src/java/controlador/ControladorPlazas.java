@@ -140,7 +140,7 @@ public class ControladorPlazas extends HttpServlet
         {
             String address = plazas.get(i).getDireccion();
             
-            if(address.length() > 30)//No siempre funcionará, las localizaciones deben de tener numero para que mostremos numero y calle, sino mostrará calle y lo que venga detrás.
+            if(address.length() > 30 && address.split(",").length > 1)//Resume la información de la dirección
                 address = address.split(",")[0] + ", " + address.split(",")[1];
             
             String desc = plazas.get(i).getDescripcion();
