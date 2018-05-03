@@ -57,10 +57,10 @@ insert into usuarios values('11159437S','Jaime','Sanz Martin','pedroduque@gmail.
 insert into usuarios values('14278937W','Pedra','Duque Perez','pedro@gmail.com','duquegar','612345678');
 
 /*Añadimos plazas*/
-insert into plazas values(0,'71156437P','Miguel Delibes 8, Valladolid','camion',40.71727401, -74.00898606,'Plaza para camiones en las afueras de Valladolid', 'mañana', 20,'/Imagenes/plazas/parking1.jpg');
-insert into plazas values(0,'71156437P','Plaza Zorrilla 6, Valladolid','moto',40.71727401, -74.00898606,'Plaza para moto', 'tarde',30,'/Imagenes/plazas/parking2.jpg');
-insert into plazas values(0,'11159437S','Gran Via 2, Madrid','coche',40.71727401, -74.00898606,'Plaza situada en el centro de Madrid, imposible encontrar sitio por alrededor', 'mañana',40,'/Imagenes/plazas/parking3.jpg');
-insert into plazas values(0,'11159437S','Plaza Mayor 4, Valladolid','coche',40.71727401, -74.00898606,'Plaza amplian en pleno centro', 'full',40,'/Imagenes/plazas/parking4.jpg');
+insert into plazas values(0,'71156437P','7, Calle de Antonio Pirala, Ventas, Ciudad Lineal, Madrid, Área metropolitana de Madrid y Corredor del Henares, Comunidad de Madrid, 28017, España','camion',40.43030121859354, -3.659496903528634,'Plaza para camiones en las afueras de Valladolid', 'mañana', 20,'/Imagenes/plazas/parking1.jpg');
+insert into plazas values(0,'71156437P','8, Calle de Cipriano Sancho, Quintana, Ciudad Lineal, Madrid, Área metropolitana de Madrid y Corredor del Henares, Comunidad de Madrid, 28017, España','moto',40.4316449, -3.6549834,'Buena plaza para moto', 'tarde',30,'/Imagenes/plazas/parking2.jpg');
+insert into plazas values(0,'11159437S','19, Calle de Benidorm, Ventas, Ciudad Lineal, Madrid, Área metropolitana de Madrid y Corredor del Henares, Comunidad de Madrid, 28017, España','coche',40.4312244, -3.6545053,'Plaza situada en el centro de Madrid, imposible encontrar mejor sitio por alrededor', 'mañana',40,'/Imagenes/plazas/parking3.jpg');
+insert into plazas values(0,'11159437S','5, Calle Cyesa, Ventas, Ciudad Lineal, Madrid, Área metropolitana de Madrid y Corredor del Henares, Comunidad de Madrid, 28017, España','coche',40.4301815, -3.65884870295184,'Plaza amplia en pleno centro', 'full',40,'/Imagenes/plazas/parking4.jpg');
 
 
 /*Añadimos reservas realizadas*/
