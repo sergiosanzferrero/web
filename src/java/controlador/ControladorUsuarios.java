@@ -35,16 +35,12 @@ public class ControladorUsuarios extends HttpServlet {
         
         Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
 
-        String url="";
-        if(UsuariosBD.existeUsuario(usuario.getEmail())){
-            url="mapa.jsp";
-        }
-        else{
-        url = "registro.jsp"; 
+        String url="index.jsp";
+
         UsuariosBD.insert(usuario);
         HttpSession session = request.getSession(); 
-        session.setAttribute("usuario", usuario);   
-        }
+        session.setAttribute("login", usuario);   
+        
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
         request.getRequestDispatcher(url).forward(request, response);

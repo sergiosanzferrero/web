@@ -35,13 +35,13 @@
                             <input  class="form-control" name="apellidos" placeholder="<%=usuario.getApellidos()%>" type="text" maxlength="50" readonly>
                             <br>
                             <label >Email:</label>
-                            <input class="form-control" name="email" placeholder="<%=usuario.getEmail()%>" type="text" maxlength="50">
+                            <input class="form-control" name="email" placeholder="<%=usuario.getEmail()%>" type="text" maxlength="50" required>
                             <br>
                             <label>Nueva Contraseña:</label>
-                            <input class="form-control" name="password" type="password" placeholder="Nuevo password" maxlength="50">
+                            <input class="form-control" name="password" type="password" placeholder="Nuevo password" maxlength="50" required>
                             <br>
                             <label>Teléfono:</label>
-                            <input class="form-control" name="telefono" type="text" maxlength="50" placeholder="<%=usuario.getTelefono()%>">
+                            <input class="form-control" name="telefono" type="text" maxlength="50" placeholder="<%=usuario.getTelefono()%>" required>
                         </div>
                         <button type="submit" class="btn btn-default">Editar</button>
                     </form>
