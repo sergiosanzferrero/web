@@ -22,7 +22,7 @@ public class PlazasBD
     {   
         ConnectionPool pool = ConnectionPool.getInstance(); 
         Connection connection = pool.getConnection();
-        String query="INSERT INTO plazas (dni,direccion,tipo,latitud, longitud, descripcion,precioDia,img) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query="INSERT INTO plazas (dni,direccion,tipo,latitud, longitud, descripcion,horario,precioDia,img) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         
         try 
@@ -35,8 +35,9 @@ public class PlazasBD
             ps.setString(4, plaza.getLatitud().toString());  
             ps.setString(5, plaza.getLongitud().toString());  
             ps.setString(6, plaza.getDescripcion()); 
-            ps.setString(7, plaza.getPrecioDia().toString()); 
-            ps.setString(8, plaza.getImg()); 
+            ps.setString(7, plaza.getHorario());
+            ps.setString(8, plaza.getPrecioDia().toString()); 
+            ps.setString(9, plaza.getImg()); 
             int res = ps.executeUpdate();
             ps.close(); 
             pool.freeConnection(connection);
@@ -76,6 +77,7 @@ public class PlazasBD
                 plaza.setLongitud(rs.getDouble("longitud"));
                 plaza.setDescripcion(rs.getString("descripcion"));
                 plaza.setTipo(rs.getString("tipo"));
+                plaza.setHorario(rs.getString("horario"));
                 plaza.setPrecioDia(rs.getFloat("precioDia"));
                 plaza.setImg(rs.getString("img"));
                 plazas.add(plaza);
@@ -121,6 +123,7 @@ public class PlazasBD
                 plaza.setLatitud(rs.getDouble("latitud"));
                 plaza.setLongitud(rs.getDouble("longitud"));
                 plaza.setDescripcion(rs.getString("descripcion"));
+                plaza.setHorario(rs.getString("horario"));
                 plaza.setTipo(rs.getString("tipo"));
                 plaza.setPrecioDia(rs.getFloat("precioDia"));
                 plaza.setImg(rs.getString("img"));

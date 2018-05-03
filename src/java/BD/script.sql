@@ -57,10 +57,10 @@ insert into usuarios values('11159437S','Jaime','Sanz Martin','pedroduque@gmail.
 insert into usuarios values('14278937W','Pedra','Duque Perez','pedro@gmail.com','duquegar','612345678');
 
 /*Añadimos plazas*/
-insert into plazas values(0,'71156437P','Miguel Delibes 8, Valladolid','camion',40.71727401, -74.00898606,'Plaza para camiones en las afueras de Valladolid',20,'/Imagenes/plazas/parking1.jpg');
-insert into plazas values(0,'71156437P','Plaza Zorrilla 6, Valladolid','moto',40.71727401, -74.00898606,'Plaza para moto',30,'/Imagenes/plazas/parking2.jpg');
-insert into plazas values(0,'11159437S','Gran Via 2, Madrid','coche',40.71727401, -74.00898606,'Plaza situada en el centro de Madrid, imposible encontrar sitio por alrededor',40,'/Imagenes/plazas/parking3.jpg');
-insert into plazas values(0,'11159437S','Plaza Mayor 4, Valladolid','coche',40.71727401, -74.00898606,'Plaza amplian en pleno centro',40,'/Imagenes/plazas/parking4.jpg');
+insert into plazas values(0,'71156437P','Miguel Delibes 8, Valladolid','camion',40.71727401, -74.00898606,'Plaza para camiones en las afueras de Valladolid', 'mañana', 20,'/Imagenes/plazas/parking1.jpg');
+insert into plazas values(0,'71156437P','Plaza Zorrilla 6, Valladolid','moto',40.71727401, -74.00898606,'Plaza para moto', 'tarde',30,'/Imagenes/plazas/parking2.jpg');
+insert into plazas values(0,'11159437S','Gran Via 2, Madrid','coche',40.71727401, -74.00898606,'Plaza situada en el centro de Madrid, imposible encontrar sitio por alrededor', 'mañana',40,'/Imagenes/plazas/parking3.jpg');
+insert into plazas values(0,'11159437S','Plaza Mayor 4, Valladolid','coche',40.71727401, -74.00898606,'Plaza amplian en pleno centro', 'full',40,'/Imagenes/plazas/parking4.jpg');
 
 
 /*Añadimos reservas realizadas*/

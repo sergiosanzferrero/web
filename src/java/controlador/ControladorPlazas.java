@@ -30,15 +30,18 @@ public class ControladorPlazas extends HttpServlet
             url = "mapa.jsp";
             
             ArrayList<Plaza> plazas = PlazasBD.selectAllPlazas();
-            HttpSession session = request.getSession(); 
-            session.setAttribute("plazas", plazas);   
+            String json = FillPlacesToJson(plazas);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
+            return;
         }
         
         /*Cuando envia formulario de publicacion de plaza*/
         else if(path.contains("publicar"))
         {
             // MODIFICADA url de publiar.jsp a mapa.html
-            url = "mapa.jsp"; 
+            url = "mapa.jsp";
             System.out.println("PLAZA PUBLICADA");
             //String id = request.getParameter("id");
             String direccion = request.getParameter("searcher");
@@ -85,5 +88,29 @@ public class ControladorPlazas extends HttpServlet
         request.getRequestDispatcher(url).forward(request, response);
     }
   
+    private String FillPlacesToJson(ArrayList<Plaza> plazas)
+    {
+        String json = "[";
+        
+        for(int i = 0; i < plazas.size(); i++)
+        {
+            if(i != 0)
+                json += " , ";
+            
+            json += "{ \"descripcion\": \""+ plazas.get(i).getDescripcion() +"\","+
+                    "\"address\": \""+ plazas.get(i).getDireccion()+"\","+
+                    "\"type\": \""+ plazas.get(i).getTipo()+"\","+
+                    "\"schedule\": \""+ plazas.get(i).getHorario()+"\","+
+                    "\"latitude\": \""+ plazas.get(i).getLatitud()+"\","+
+                    "\"longitude\": \""+ plazas.get(i).getLongitud()+"\","+
+                    "\"price\": \""+ plazas.get(i).getDescripcion() +"\","+
+                    "\"contactName\": \"getnamebydni\","+
+                    "\"appreciationAverage\": \"3\","+
+                    "\"imagePath\": \""+ "Imagenes/plazas/parking1.jpg" +"\"}";
+        }
+        
+        json += "]";
 
+        return json;
+    }
 }

@@ -45,6 +45,22 @@ var HttpClient = function()
     }
 }
 
+var HttpPostClient = function() 
+{
+    this.get = function(url, aCallback) 
+    {
+        var req = new XMLHttpRequest();
+		
+        req.onreadystatechange = function()
+        { 
+            if (req.readyState == 4 && req.status == 200)
+                aCallback(req.responseText);
+        }
+		
+        req.open("POST", url, true);            
+        req.send( null );
+    }
+}
 
 /* Check if the formulary options are correct before to make the POST*/
 
@@ -65,7 +81,13 @@ $(function()
 				
                     removeMarkersAndItems();
                     
-                    placesjson = 
+                    var client = new HttpPostClient();
+		
+                    client.get('http://localhost:8080/WebApplication1/mapa', function(response) 
+                    {
+			placesjson = JSON.parse(response);
+                        
+                    /*placesjson = 
                     [
                         {
                             "description" : "aparcamiento publico cuando vengais saco el coche y os cedo la plaza",
@@ -91,7 +113,7 @@ $(function()
                             "appreciationAverage" : "4",
                             "imagePath" : "Imagenes/plazas/parking2.jpg"
                         }
-                    ];
+                    ];*/
 
                     if(Object.keys(placesjson).length > 0)
                     {
@@ -146,7 +168,7 @@ $(function()
                             alert("no se encontraron plazas");
                             $('.scrollable-results').css('display', 'none');
                     }
-
+                });
                     $('#carousel').css('display', 'none');
                     $('#items').css('display', 'block');
                     $('.scrollable-items').css('overflow-y', 'scroll');
