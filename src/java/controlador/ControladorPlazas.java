@@ -94,16 +94,26 @@ public class ControladorPlazas extends HttpServlet
         
         for(int i = 0; i < plazas.size(); i++)
         {
+            String address = plazas.get(i).getDireccion();
+            
+            if(address.length() > 30)//No siempre funcionará, las localizaciones deben de tener numero para que mostremos numero y calle, sino mostrará calle y lo que venga detrás.
+                address = address.split(",")[0] + ", " + address.split(",")[1];
+            
+            String desc = plazas.get(i).getDescripcion();
+            
+            if(desc.length() > 40)
+                desc = desc.substring(0,40) + "...";
+            
             if(i != 0)
                 json += " , ";
             
-            json += "{ \"descripcion\": \""+ plazas.get(i).getDescripcion() +"\","+
-                    "\"address\": \""+ plazas.get(i).getDireccion()+"\","+
+            json += "{ \"description\": \""+ desc +"\","+
+                    "\"address\": \""+ address+"\","+
                     "\"type\": \""+ plazas.get(i).getTipo()+"\","+
                     "\"schedule\": \""+ plazas.get(i).getHorario()+"\","+
                     "\"latitude\": \""+ plazas.get(i).getLatitud()+"\","+
                     "\"longitude\": \""+ plazas.get(i).getLongitud()+"\","+
-                    "\"price\": \""+ plazas.get(i).getDescripcion() +"\","+
+                    "\"price\": \""+ plazas.get(i).getPrecioDia()+"\","+
                     "\"contactName\": \"getnamebydni\","+
                     "\"appreciationAverage\": \"3\","+
                     "\"imagePath\": \""+ "Imagenes/plazas/parking1.jpg" +"\"}";
