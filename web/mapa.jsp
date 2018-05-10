@@ -83,7 +83,7 @@ and open the template in the editor.
             <div class="row container secundario">
 				<h2>Buscador de parkings</h2>
 					<div class="container col-sm-6 scrollable-items" style="height:90%;">
-						<form action="/mapa.html" id="mySearcher" method="POST" autocomplete="off">
+						<form action="/mapa.jsp" id="mySearcher" method="POST" autocomplete="off">
 							<div class="form-group">
 								<div class="row" style="margin-left:0;padding-right:1em;">
 									<div class="col-md-6" style="margin:0;padding:0;padding-right:1em;"> 
