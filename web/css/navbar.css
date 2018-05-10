@@ -19,8 +19,6 @@ a.rnav
 {
         text-align: center !important;
         margin:0px !important;
-        padding-right: 10% !important;
-        padding-left: 10% !important;
         font-size: 85% !important;
 }
 
@@ -28,8 +26,6 @@ a.vertical-line-height
 {
         text-align: center !important;
         margin:0px !important;
-        padding-right: 10% !important;
-        padding-left: 10% !important;
         font-size: 85% !important;
 }
 
@@ -37,8 +33,6 @@ a.rnav-last
 {
         text-align: center !important;
         margin:0px !important;
-        padding-right: 10% !important;
-        padding-left: 10% !important;
         font-size: 85% !important;
 }
 
@@ -51,8 +45,8 @@ a.rnav-last
 {
     padding:0; 
     margin:0 auto; 
-    width:90%;
-	height:100%;
+    width:95%;
+    height:100%;
 }
 
 .secundario
@@ -60,7 +54,7 @@ a.rnav-last
     padding: 0; 
     margin: 0 auto; 
     width: 100%;
-	height:80%;
+    height:80%;
 }
 
 .navbar
@@ -91,4 +85,9 @@ img.navbar
 footer
 {
     float: left;
+}
+
+.container-fluid
+{
+    padding-left:0;
 }

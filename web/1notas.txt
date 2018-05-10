@@ -20,3 +20,8 @@ en el nav, tambien hay que crear al menos un pequeño html para reditigir en cas
 
 -Modificada la base de datos, añadido una nueva columna en la tabla plazas  que es horario,
 de mañana de tarde o jornada completa.
+
+-que muestre las plazas para un radio dado.
+-hacer el logout.
+-error popup iniciar sesion
+-valoraciones 

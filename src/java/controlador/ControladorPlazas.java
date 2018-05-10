@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -47,59 +48,43 @@ public class ControladorPlazas extends HttpServlet
         /*Cuando envia formulario de publicacion de plaza*/
         else if(path.contains("publicar"))
         {
-            // MODIFICADA url de publiar.jsp a mapa.html
             url = "mapa.jsp";
-            System.out.println("PLAZA PUBLICADA");
-            //String id = request.getParameter("id");
+            
             String direccion = request.getParameter("searcher");
             Double latitud = Double.parseDouble(request.getParameter("lat"));
             Double longitud = Double.parseDouble(request.getParameter("lon"));
             String tipo = request.getParameter("tipo");
             String descripcion = request.getParameter("descripcion");
             String horario = request.getParameter("horario");
-           // String img = request.getParameter("img");/* Recibe la imagen en multipart form data en array de bytes*/
             
-            
-            String pathFile = getServletContext().getRealPath("/Imagenes/plazas");
             Part filePart = request.getPart("file-upload");
-            String fileName=""; 
+            String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+            InputStream fileContent = filePart.getInputStream();
+            String img = "/Imagenes/plazas/" + fileName;
             
-            int contador=0;
-            for (String cd : filePart.getHeader("content-disposition").split(";")) {
-                if (cd.trim().startsWith("filename")&& contador<1) {
-                    String fileName2 = cd.substring(cd.indexOf('=') + 1).trim().replace("\"","");
-                    fileName= fileName2.substring(fileName2.lastIndexOf('/')+1).substring(fileName2.lastIndexOf('\\')+1);
-                }
-            }
-            String img="/Imagenes/plazas/"+fileName;
+            String pathFile = getServletContext().getRealPath("/");
+            pathFile = pathFile.substring(0, pathFile.lastIndexOf("\\"));
+            pathFile = pathFile.substring(0, pathFile.lastIndexOf("\\"));
+            pathFile = pathFile.substring(0, pathFile.lastIndexOf("\\"));
+            pathFile += "\\web\\Imagenes\\plazas\\" + fileName;
             
-                   
-            InputStream fileContent = filePart.getInputStream(); 
-            OutputStream outFile = null;
-            outFile = new FileOutputStream(new File(pathFile + File.separator + fileName)); 
+            OutputStream outFile = new FileOutputStream(new File(pathFile)); 
             int read = 0;
             byte[] bytes = new byte[1024];
-            while ((read = fileContent.read(bytes)) != -1) { 
+            
+            while ((read = fileContent.read(bytes)) != -1) 
+            { 
                 outFile.write(bytes, 0, read);
             }
             
-            if (outFile != null) { 
+            if (outFile != null)
                     outFile.close();
-            }
-            if (fileContent != null) { 
+            
+            if (fileContent != null)
                     fileContent.close();
-            }
             
-            
-            
-            
-            
-            
-            
-            /*Pendiente de implementacion*/
             String dni = request.getParameter("dni");
             Float precioDia = Float.parseFloat(request.getParameter("precio"));
-            /*Pendiente de implementación*/
             
             Plaza plaza=new Plaza(dni,direccion,tipo,latitud,longitud,descripcion,horario, precioDia,img);
             int id=PlazasBD.insert(plaza);
