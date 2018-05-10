@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import modelo.Plaza;
 import modelo.Usuario;
@@ -27,7 +28,7 @@ public class PlazasBD
         
         try 
         {
-            ps = connection.prepareStatement(query); 
+            ps = connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS); 
             //ps.setString(1, plaza.getId()); 
             ps.setString(1, plaza.getDni());
             ps.setString(2, plaza.getDireccion()); 
@@ -38,7 +39,13 @@ public class PlazasBD
             ps.setString(7, plaza.getHorario());
             ps.setString(8, plaza.getPrecioDia().toString()); 
             ps.setString(9, plaza.getImg()); 
-            int res = ps.executeUpdate();
+            //int res = ps.executeUpdate();
+            int res = 0;
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                res = rs.getInt(1);
+            } 
             ps.close(); 
             pool.freeConnection(connection);
             return res;

@@ -102,7 +102,9 @@ public class ControladorPlazas extends HttpServlet
             /*Pendiente de implementación*/
             
             Plaza plaza=new Plaza(dni,direccion,tipo,latitud,longitud,descripcion,horario, precioDia,img);
-            PlazasBD.insert(plaza);
+            int id=PlazasBD.insert(plaza);
+            plaza.setId(id);
+            
             HttpSession session = request.getSession(); 
             session.setAttribute("parking", plaza);   
         }
