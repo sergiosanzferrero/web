@@ -25,3 +25,16 @@ de mañana de tarde o jornada completa.
 -hacer el logout.
 -error popup iniciar sesion
 -valoraciones 
+
+
+
+-hacer funcionar el boton de logout
+-en publicar plaza obligar a que seleccione calle para rellenar el formulario
+-que para publicar y reservar pida estar logueado sino no permita entrar, y poner los links de cuando esta
+logueado y quitarlos cuando no (como acceder y publicar..).
+-arreglar en buscar la valoracion de los clientes puntuacion etc.
+-implementar jsps que faltan
+-validar campos en busqueda registro y login y publicar etc..
+-que los formularios se hagan con post y no con get..
+-validar llegada/salida fechas.
+-hacer filtro por radio

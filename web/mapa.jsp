@@ -1,10 +1,5 @@
 
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="modelo.Plaza" %>
-<% ArrayList<Plaza> plazas;
-if(session.getAttribute("plazas")!=null)
-    plazas = (ArrayList<Plaza>) session.getAttribute("plazas");  %>
 
 <!--
 To change this license header, choose License Headers in Project Properties.
