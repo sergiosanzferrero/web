@@ -60,7 +60,7 @@ public class ControladorPlazas extends HttpServlet
             Part filePart = request.getPart("file-upload");
             String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
             InputStream fileContent = filePart.getInputStream();
-            String img = "/Imagenes/plazas/" + fileName;
+            String img = "Imagenes/plazas/" + fileName;
             
             String pathFile = getServletContext().getRealPath("/");
             pathFile = pathFile.substring(0, pathFile.lastIndexOf("\\"));
@@ -147,7 +147,7 @@ public class ControladorPlazas extends HttpServlet
                     "\"price\": \""+ plazas.get(i).getPrecioDia()+"\","+
                     "\"contactName\": \"getnamebydni\","+
                     "\"appreciationAverage\": \"3\","+
-                    "\"imagePath\": \""+ "Imagenes/plazas/parking1.jpg" +"\"}";
+                    "\"imagePath\": \""+ plazas.get(i).getImg() +"\"}";
         }
         
         json += "]";
