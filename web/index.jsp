@@ -94,16 +94,6 @@ and open the template in the editor.
                 </a>
             </div>
        <hr>
-                <h4> Busca la plaza que mejor se adapte a ti: </h4>
-                <input type="text" id="searcher" name="searcher" class="form-control barrabuscar" placeholder="Numero calle provincia pais" name="search" autocomplete="off">
-					<div class="scrollable-results" style="display:none;padding-right:0;">
-						<select multiple id="results" style="width:100%"></select>
-					</div>
-					<form style="display: hidden" action="mapa.jsp" method="GET" id="form">
-						<input type="hidden" id="lng" name="lng" value=""/>
-						<input type="hidden" id="lat" name="lat" value=""/>
-					</form>
-				<hr>
 				<footer>
 				<p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
 				</footer>  
