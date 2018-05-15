@@ -1,4 +1,5 @@
 
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -51,7 +52,7 @@ and open the template in the editor.
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acceder <span class="glyphicon glyphicon-user"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="login.html">Iniciar sesión</a></li>
+                            <li><a href="login.html">Iniciar sesiÃ³n</a></li>
                             <li><a href="registro.html">Registrarse</a></li>
                         </ul>
                         </li>
@@ -64,7 +65,9 @@ and open the template in the editor.
                     </div>
                 </div>
             </nav>
-            <div id="myCarousel" class="carousel slide container" style="margin:0 auto;padding:0;width:100%" data-ride="carousel">
+            <div class="secundario">
+                <h2>Bienvenidos a CarTime</h2>
+            <div id="myCarousel" class="carousel slide container" style="margin:0 auto;padding:0;width:100%;" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -90,8 +93,9 @@ and open the template in the editor.
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="secundario">
-                <input type="text" id="searcher" name="searcher" class="form-control barrabuscar" placeholder="Inserte una ciudad" name="search" autocomplete="off">
+       <hr>
+                <h4> Busca la plaza que mejor se adapte a ti: </h4>
+                <input type="text" id="searcher" name="searcher" class="form-control barrabuscar" placeholder="Numero calle provincia pais" name="search" autocomplete="off">
 					<div class="scrollable-results" style="display:none;padding-right:0;">
 						<select multiple id="results" style="width:100%"></select>
 					</div>

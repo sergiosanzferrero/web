@@ -69,7 +69,7 @@ and open the template in the editor.
                 </div>
             </nav>
 			<div class="row container secundario">
-				<h2>Publicar plaza</h2>
+				<h2>Publicar parking</h2>
                                 
 				<div class="container col-sm-6" style="margin:0;padding:0;padding-right:1em;height:90%;">
 					<form action="publicar" id="mySearcher" method="POST" style="height:100%" autocomplete="off" enctype="multipart/form-data">

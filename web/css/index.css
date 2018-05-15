@@ -21,8 +21,8 @@ and open the template in the editor.
 .barrabuscar
 {
     width:100%;
-	margin:0;
-	margin-top:3em;
+    margin:0;
+    margin-top:1.5em;
 }
 
 #imagenlogo
@@ -50,4 +50,10 @@ and open the template in the editor.
 
 body{
 	height:100%;
+}
+
+h2
+{
+	margin: 0.5em;
+	margin-left: 0;
 }
