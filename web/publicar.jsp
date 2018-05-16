@@ -121,7 +121,6 @@ and open the template in the editor.
 						<input class="form-control" type="text" id="imagen" name="precio" placeholder="€" required>
 													
 						</div>
-                                            <input type="hidden" name="dni" value="11159437S">
 						<div class="col-md-3" style="margin-left:0;padding:0;padding-right:1em;padding-left:0;margin-bottom:1em;"> 
 						<label style="margin-bottom:0.5em;"> Imagen: </label><br>
 							<label for="file-upload" class="btn btn-default" style="width:100%">

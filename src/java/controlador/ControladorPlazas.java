@@ -6,6 +6,7 @@
 package controlador;
 
 import BD.PlazasBD;
+import BD.UsuariosBD;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -83,14 +84,21 @@ public class ControladorPlazas extends HttpServlet
             if (fileContent != null)
                     fileContent.close();
             
-            String dni = request.getParameter("dni");
+            
+            HttpSession session = request.getSession(); 
+            String dni = (String)session.getAttribute("dni");
+            if(dni == null){
+                url = "login.html";
+                request.getRequestDispatcher(url).forward(request, response);
+                return;
+            }
             Float precioDia = Float.parseFloat(request.getParameter("precio"));
             
             Plaza plaza=new Plaza(dni,direccion,tipo,latitud,longitud,descripcion,horario, precioDia,img);
             int id=PlazasBD.insert(plaza);
             plaza.setId(id);
             
-            HttpSession session = request.getSession(); 
+            
             session.setAttribute("parking", plaza);   
         }
         
@@ -139,14 +147,13 @@ public class ControladorPlazas extends HttpServlet
                 json += " , ";
             
             json += "{ \"link\": \"" + "plaza.jsp?id=" + plazas.get(i).getId()+ "\","+
-                    "\"description\": \""+ desc +"\","+
                     "\"address\": \""+ address+"\","+
                     "\"type\": \""+ plazas.get(i).getTipo()+"\","+
                     "\"schedule\": \""+ plazas.get(i).getHorario()+"\","+
                     "\"latitude\": \""+ plazas.get(i).getLatitud()+"\","+
                     "\"longitude\": \""+ plazas.get(i).getLongitud()+"\","+
                     "\"price\": \""+ plazas.get(i).getPrecioDia()+"\","+
-                    "\"contactName\": \"getnamebydni\","+
+                    "\"contactName\": \"" + UsuariosBD.seleccionaUsuarioDni(plazas.get(i).getDni()).getNombre() +"\","+
                     "\"appreciationAverage\": \"3\","+
                     "\"imagePath\": \""+ plazas.get(i).getImg() +"\"}";
         }

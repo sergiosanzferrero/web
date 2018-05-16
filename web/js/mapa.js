@@ -142,13 +142,12 @@ $(function()
                                                                             "<div class=\"container col-md-6\" style=\"margin:0;padding:0.3em;float:left;\">" + 
                                                                                     "<h6>Precio: " + placesjson[i].price + " €</h6>" + 
                                                                                     "<h6>Tamaño: " + placesjson[i].type + "</h6>" + 
-                                                                                    "<h6>Descripcion: " + placesjson[i].description + "</h6>" + 
+                                                                                    "<h6>Contacto: " + placesjson[i].contactName + "</h6>" + 
                                                                             "</div>" + 
                                                                             "<div class=\"container col-md-6\" style=\"margin:0;padding:0.3em;\">" + 
                                                                                     "<h6>Valoración: " +
                                                                                     stars + 
                                                                                     "</h6>" + 
-                                                                                    "<h6>Contacto: " + placesjson[i].contactName + "</h6>" + 
                                                                                     "<h6>Horario: " + placesjson[i].schedule + "</h6>" + 
                                                                             "</div>" + 
                                                                     "</div>" + 

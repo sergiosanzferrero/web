@@ -93,6 +93,37 @@ public static Usuario seleccionaUsuario(String email) {
         return null; 
     }
 }
+public static Usuario seleccionaUsuarioDni(String dni) { 
+    ConnectionPool pool = ConnectionPool.getInstance();
+    Connection connection = pool.getConnection(); 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    String query = "SELECT * FROM usuarios WHERE dni = ?";
+    
+    try { 
+        ps = connection.prepareStatement(query); 
+        ps.setString(1, dni);
+        rs = ps.executeQuery();
+        Usuario usuario=null;
+        if (rs.next()) {
+            usuario = new Usuario(); 
+            usuario.setDni(rs.getString("dni"));
+            usuario.setNombre(rs.getString("nombre"));
+            usuario.setApellidos(rs.getString("apellidos"));
+            usuario.setEmail(rs.getString("email"));
+            usuario.setPassword(rs.getString("password"));
+            usuario.setTelefono(rs.getString("telefono"));
+        }     
+        rs.close();
+        ps.close(); 
+        pool.freeConnection(connection); 
+        return usuario;
+        
+    } catch (SQLException e) { 
+        e.printStackTrace();
+        return null; 
+    }
+}
 public static boolean login(String dni, String password) { 
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection connection = pool.getConnection(); 
