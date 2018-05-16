@@ -77,7 +77,7 @@ public class PlazasBD
             while (rs.next()) 
             {
                 plaza = new Plaza(); 
-                //plaza.setId(rs.getString("id"));
+                plaza.setId(rs.getInt("id"));
                 plaza.setDni(rs.getString("dni"));
                 plaza.setDireccion(rs.getString("direccion"));
                 plaza.setLatitud(rs.getDouble("latitud"));

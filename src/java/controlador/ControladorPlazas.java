@@ -31,7 +31,7 @@ public class ControladorPlazas extends HttpServlet
     {
         String path = request.getRequestURL().toString() + "?" + request.getQueryString();
         String url = "";
-
+        
         /*Cuando envia formulario de busqueda de plazas*/
         if(path.contains("mapa"))
         {
@@ -138,7 +138,8 @@ public class ControladorPlazas extends HttpServlet
             if(i != 0)
                 json += " , ";
             
-            json += "{ \"description\": \""+ desc +"\","+
+            json += "{ \"link\": \"" + "plaza.jsp?id=" + plazas.get(i).getId()+ "\","+
+                    "\"description\": \""+ desc +"\","+
                     "\"address\": \""+ address+"\","+
                     "\"type\": \""+ plazas.get(i).getTipo()+"\","+
                     "\"schedule\": \""+ plazas.get(i).getHorario()+"\","+

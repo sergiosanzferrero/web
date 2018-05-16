@@ -90,6 +90,7 @@ $(function()
                     /*placesjson = 
                     [
                         {
+                            "link" : "plaza.jsp?id=10293012",
                             "description" : "aparcamiento publico cuando vengais saco el coche y os cedo la plaza",
                             "address" : "calle del mambo 9 sevilla",
                             "type" : "furgoneta",
@@ -102,6 +103,7 @@ $(function()
                             "imagePath" : "Imagenes/plazas/parking1.jpg"
                         },
                         {
+                            "link" : "plaza.jsp?id=10293012",
                             "description" : "el aparcamiento de mi vecino que me deja las llaves",
                             "address" : "calle del rondo 134 caceres",
                             "type" : "coche",
@@ -133,7 +135,7 @@ $(function()
 
                             var item = "<div class=\"col-md-6\" style=\"margin:0;padding:0;padding-left:0.5em;padding-bottom:1em;\">" +
                                                     "<li id=\"itembox\" value=\"" + i.toString() + "\"style=\"height:120px;width:100%;float:left;margin:0;padding:0;\">" +
-                                                            "<a class=\"item\" href=\"plaza.html\">" + 
+                                                            "<a class=\"item\" href=\"" + placesjson[i].link + "\">" + 
                                                                     "<img id=\"img\" class=\"container col-md-4\" style=\"margin:0;padding:0;height:100%\" src=\"" + placesjson[i].imagePath + "\" alt=\"parking1\">" + 
                                                                     "<div class=\"container col-md-8\" style=\"margin:0;padding:0;float:left;height:100%\">" + 
                                                                             "<p style=\"background:#ddd;margin:0;padding:0.2em;padding-bottom:0;\">" + placesjson[i].address + "</p>" + 
