@@ -29,16 +29,15 @@ and open the template in the editor.
                         <a class="navbar-brand" href="index.jsp">
                             <img class="img-responsive navbar" src="Imagenes/logo.jpg" alt="logo">
                         </a>
+                         <%@ page import="modelo.Usuario" %>
+                        <%Usuario usuario= (Usuario) session.getAttribute("login");%>
                     </div>
                    <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.jsp">Inicio</a></li>
                         <li><a href="mapa.jsp">Buscar plaza</a></li>
-                        <li><a href="publicar.jsp">Publicar plaza</a></li>
-                       
-                         <%@ page import="modelo.Usuario" %>
-                        <%Usuario usuario= (Usuario) session.getAttribute("login");
-                        if(usuario!=null){%>
+                        <%if(usuario!=null){%>
+                        <li><a href="publicar.jsp">Publicar plaza</a></li>                  
                         <li><a href="perfil.jsp">Perfil</a></li>
                         <%}%>
                     </ul>
