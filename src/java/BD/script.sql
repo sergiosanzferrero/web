@@ -57,6 +57,8 @@ insert into usuarios values('71156437P','Pedro','Duque Garcia','pedroduque@gmail
 insert into usuarios values('71456778E','Raul','Garcia Arranz','raul@gmail.com','raul', '666777888');
 insert into usuarios values('11159437S','Jaime','Sanz Martin','jaimicar@gmail.com','jaime','698765432');
 insert into usuarios values('14278937W','Cristian','Ruiz Perez','cristian34@gmail.com','cristian','612345678');
+insert into usuarios values('14278938W','admin','admin','admin','admin','612234444');
+
 
 insert into plazas values(1,'71156437P','13, Calle de la Hípica, La Farola, Valladolid, Castilla y León, 47004, España','camion',41.6373619, -4.7372698580612,'Plaza para camiones en las afueras de Valladolid', 'Parcial mañana', 20,'Imagenes/plazas/parking1.jpg');
 insert into plazas values(2,'71156437P','50, Carrer de Viladomat, Project Area Sant Antoni, Sant Antoni, Eixample, Barcelona, Barcelonés, Barcelona, Cataluña, 08023, España','moto',41.37731173187469, 2.1605426071982947,'Plaza para moto', 'Parcial tarde',30,'Imagenes/plazas/parking2.jpg');

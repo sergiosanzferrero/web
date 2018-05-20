@@ -29,21 +29,26 @@ public class ControladorInicioSesion extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("contrasena");
      
-        
+       
        // Usuario usuario=new Usuario(dni,nombre,apellidos,email,password,telefono);
 
         String url="";
         if(UsuariosBD.login(email,password)){
             url="mapa.jsp";
+            Usuario usuario=UsuariosBD.seleccionaUsuario(email);
+            HttpSession session = request.getSession(); 
+            session.setAttribute("login", usuario);
+            session.setAttribute("dni", usuario.getDni());
+            if(email.equals("admin")){
+                url="ControlReserva";
+            }
         }
         else{
         url = "errorLogin.html"; 
         }
         
-        Usuario usuario=UsuariosBD.seleccionaUsuario(email);
-        HttpSession session = request.getSession(); 
-        session.setAttribute("login", usuario);
-        session.setAttribute("dni", usuario.getDni());
+        
+        
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
         request.getRequestDispatcher(url).forward(request, response);
