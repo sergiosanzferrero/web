@@ -85,7 +85,7 @@ and open the template in the editor.
 									<div class="col-md-6" style="margin:0;padding:0;padding-right:1em;"> 
 										<label for="searcher">Lugar:</label><br>
 										<div class="btn-group" style="width:100%;">
-											<input list="results"  name="searcher" class="form-control" style="margin:0;width:100%;padding-right:2em" id="searcher" placeholder="Numero calle provincia pais">
+											<input list="results"  name="searcher" class="form-control" style="margin:0;width:100%;padding-right:2em" id="searcher" placeholder="Numero calle provincia pais" required>
 											<span class="glyphicon glyphicon-remove-circle clean-search-button"></span>
 										</div>
 										<div class="scrollable-results" style="display:none;">
