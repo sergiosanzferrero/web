@@ -69,7 +69,7 @@ and open the template in the editor.
                     </ul>
                       <% } else{ %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
+                        <li><a href="ControladorLogOut">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
                     </ul>
                     <% } %>     
                     </div>

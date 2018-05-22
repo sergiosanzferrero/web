@@ -37,6 +37,9 @@ and open the template in the editor.
                     <li><a href="publicar.jsp">Publicar plaza</a></li>
               
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="ControladorLogOut">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
+                </ul>
                 </div>
             </div>
         </nav>
