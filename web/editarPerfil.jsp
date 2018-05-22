@@ -18,7 +18,7 @@
     
     </head>
     <body>
-                    <div class="container row" style="margin:0;padding: 0;"> 
+                    <div class="container row" style="margin:25px;padding: 0;"> 
                 <div class="container col-sm-6" style="margin:0;padding: 0;">
                     <h2>Editar perfil</h2>
                 <%@page import="modelo.Usuario"  %>
