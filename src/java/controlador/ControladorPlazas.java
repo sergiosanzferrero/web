@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import modelo.Plaza;
 
-@WebServlet(name = "ControladorPlazas", urlPatterns = {"/mapa", "/publicar"})
+@WebServlet(name = "ControladorPlazas", urlPatterns = {"/mapa", "/publicar","/plaza.jsp"})
 @MultipartConfig
 public class ControladorPlazas extends HttpServlet 
 {
@@ -101,6 +101,7 @@ public class ControladorPlazas extends HttpServlet
             
             session.setAttribute("parking", plaza);   
         }
+
         
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
@@ -122,6 +123,16 @@ public class ControladorPlazas extends HttpServlet
         else if(path.contains("publicar"))
         {
             url = "publicar.jsp"; 
+        }
+        else if (path.contains("plaza"))
+        {
+           url = "local.jsp";
+           System.out.println("PLAZAS");
+          Integer id = Integer.parseInt(request.getParameter("id"));
+          System.out.println("PLAZA CON ID="+id.toString());
+          ArrayList<Plaza> plazas = PlazasBD.selectPlazaId(id);
+
+                  request.setAttribute("plazas", plazas);
         }
         
         request.getRequestDispatcher(url).forward(request, response);

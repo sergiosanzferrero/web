@@ -16,7 +16,9 @@ and open the template in the editor.
         <link href="css/plaza.css" rel="stylesheet" type="text/css">      
     </head>
     <body>
-        
+        <%@page import="modelo.Plaza"  %>
+        <%@page import="java.util.ArrayList" %>
+        <% ArrayList<Plaza> plazas=(ArrayList<Plaza>)request.getAttribute("plazas");  %>
         <div class="container principal">
             <nav class="navbar navbar-light bg-light navbar-static-top">
                 <div class="container-fluid">
@@ -64,8 +66,7 @@ and open the template in the editor.
         
         
         <div class="container-fluid" id="contplaza">
-            <h1>Calle de Espoz y Mina, 60</h1>
-            <h1>Madrid</h1>
+            <h1><%=plazas.get(0).getDireccion()%></h1>
             <div class="row">
                     <div class="col-md-8">
         <div class="row">
@@ -87,7 +88,7 @@ and open the template in the editor.
                     <h4 id="ip"> Descripción </h4>
                     </div>
                         <div class="col-md-9">
-                            Plaza para moto, coche o furgoneta en parking de residentes. Vigilancia 24h. Disponible todo el fin de semana.
+                            <%=plazas.get(0).getDescripcion()%>.&emsp;<%=plazas.get(0).getHorario()%>.
                             </div>
                     </div>
                     <div class="row">
@@ -95,17 +96,18 @@ and open the template in the editor.
                     <h4 > Tamaño </h4>
                     </div>
                         <div class="col-md-9">
-                            Moto&nbsp;|&nbsp;Coche pequeño&nbsp;|&nbsp;Coche grande&nbsp;|&nbsp;Furgoneta
+                            <%=plazas.get(0).getTipo()%>
                             </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                    <h4 > Acceso </h4>
+                    <!--<h4 > Acceso </h4>-->
                     </div>
                         <div class="col-md-9">
-                            El dueño te dejará el mando. Tendrás que devolverlo cuando acabe la reserva.
+                            <!--El dueño te dejará el mando. Tendrás que devolverlo cuando acabe la reserva.-->
                             </div>
                     </div>
+                    
                 </div>
             </div>
 
@@ -120,9 +122,9 @@ and open the template in the editor.
     <div class="col-md-4" >
         <div class="well" >
             <h4> Reservar plaza </h4>
-            <h5> 2,50 ?/hora </h5>
-            <p> 4,00 ?/día </p>
-            <p> 20,00 ?/semana </p>
+            <!--<h5> 2,50 ?/hora </h5> -->
+            <p> <%=plazas.get(0).getPrecioDia()%> &euro;/día </p>
+            <!--<p> 20,00 ?/semana </p> -->
             <form action="Reservar" method="post">
             <div class="row">
                 <div class="col-md-6">
@@ -162,6 +164,7 @@ and open the template in the editor.
     <div class="col-md-4">
         <div class="well">
             <p>Imagen de la plaza</p>
+            <p><img style='height: 100%; width: 100%; object-fit: contain' src="<%=plazas.get(0).getImg()%>" alt="Imagen plaza"> </p>
 
         
         </div>
