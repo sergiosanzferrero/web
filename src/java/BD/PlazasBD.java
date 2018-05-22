@@ -150,5 +150,99 @@ public class PlazasBD
         
         return plazas;
     }  
-    
+     
+          public static ArrayList<Plaza> selectPlazaId(Integer id) 
+    {
+        ArrayList<Plaza> plazas = new ArrayList<Plaza>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection(); 
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM plazas where id=?";
+                  System.out.println("CONSULTADO");
+        try 
+        {
+          
+            ps = connection.prepareStatement(query);
+            ps.setString(1, id.toString());
+            rs = ps.executeQuery();
+            Plaza plaza = null;
+
+            while (rs.next()) 
+            {
+                plaza = new Plaza(); 
+                plaza.setId(rs.getInt("id"));
+                plaza.setDni(rs.getString("dni"));
+                plaza.setDireccion(rs.getString("direccion"));
+                plaza.setLatitud(rs.getDouble("latitud"));
+                plaza.setLongitud(rs.getDouble("longitud"));
+                plaza.setDescripcion(rs.getString("descripcion"));
+                plaza.setHorario(rs.getString("horario"));
+                plaza.setTipo(rs.getString("tipo"));
+                plaza.setPrecioDia(rs.getFloat("precioDia"));
+                plaza.setImg(rs.getString("img"));
+                plazas.add(plaza);
+            }
+
+            rs.close();
+            ps.close(); 
+            pool.freeConnection(connection);                 
+        } 
+        
+        catch (SQLException e) 
+        { 
+            e.printStackTrace();
+            return null;
+        }
+        
+        return plazas;
+    }  
+         public static ArrayList<Plaza> selectPlazasBuscar(float longitud, float latitud, String llegada, String salida, String tipo) 
+    {
+        
+        // POR COMPLETAR: query para buscar plazas dados los datos del formulario
+        ArrayList<Plaza> plazas = new ArrayList<Plaza>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection(); 
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM plazas where tipo=?";
+        
+        try 
+        {
+          
+            ps = connection.prepareStatement(query);
+            ps.setString(1, tipo);
+            rs = ps.executeQuery();
+            Plaza plaza = null;
+
+            while (rs.next()) 
+            {
+                plaza = new Plaza(); 
+                //plaza.setId(rs.getString("id"));
+                plaza.setDni(rs.getString("dni"));
+                plaza.setDireccion(rs.getString("direccion"));
+                plaza.setLatitud(rs.getDouble("latitud"));
+                plaza.setLongitud(rs.getDouble("longitud"));
+                plaza.setDescripcion(rs.getString("descripcion"));
+                plaza.setHorario(rs.getString("horario"));
+                plaza.setTipo(rs.getString("tipo"));
+                plaza.setPrecioDia(rs.getFloat("precioDia"));
+                plaza.setImg(rs.getString("img"));
+                plazas.add(plaza);
+            }
+
+            rs.close();
+            ps.close(); 
+            pool.freeConnection(connection);                 
+        } 
+        
+        catch (SQLException e) 
+        { 
+            e.printStackTrace();
+            return null;
+        }
+        
+        return plazas;
+    }  
 }
