@@ -58,9 +58,7 @@ and open the template in the editor.
             <form action="editarPerfil.jsp">
                 <button type="submit" class="btn btn-default">Editar Perfil</button>            
             </form>
-                <form action="ControladorPlazasUsuario">
-                <button type="submit" class="btn btn-default">Mostrar plazas</button>            
-            </form>
+       
   
      
     </body>
