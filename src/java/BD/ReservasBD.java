@@ -22,14 +22,21 @@ public class ReservasBD {
 public static int insert(Reserva reserva) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin) VALUES (?, ?, ?, ?)";
+    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin,valoracion,activa) VALUES (?, ?, ?, ?, ?, ?)";
     PreparedStatement ps = null;
+    String boolquery=null;
   try {
         ps = connection.prepareStatement(query); 
         ps.setString(1, reserva.getId()); 
         ps.setString(2, reserva.getDni()); 
         ps.setString(3, reserva.getFechaInicio()); 
         ps.setString(4, reserva.getFechaFin()); 
+        ps.setString(5, reserva.getValoracion().toString());
+        if (reserva.getActiva().toString().equals("false"))
+            boolquery="0";
+        else boolquery="1";
+        
+        ps.setString(6, boolquery);
         int res = ps.executeUpdate();
         ps.close(); 
         pool.freeConnection(connection);

@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import modelo.Plaza;
+import modelo.Usuario;
 
 @WebServlet(name = "ControladorPlazas", urlPatterns = {"/mapa", "/publicar","/plaza.jsp"})
 @MultipartConfig
@@ -131,8 +132,10 @@ public class ControladorPlazas extends HttpServlet
           Integer id = Integer.parseInt(request.getParameter("id"));
           System.out.println("PLAZA CON ID="+id.toString());
           ArrayList<Plaza> plazas = PlazasBD.selectPlazaId(id);
+          Usuario arrendador = UsuariosBD.seleccionaUsuarioDni(plazas.get(0).getDni());
 
                   request.setAttribute("plazas", plazas);
+                  request.setAttribute("arrendador", arrendador);
         }
         
         request.getRequestDispatcher(url).forward(request, response);

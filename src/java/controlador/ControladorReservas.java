@@ -30,7 +30,9 @@ public class ControladorReservas extends HttpServlet {
             String dni = request.getParameter("dni");
             String fechaInicio = request.getParameter("fecha_llegada");
             String fechaFin = request.getParameter("fecha_salida");
-                 Reserva reserva=new Reserva(id,dni,fechaInicio,fechaFin);
+            Integer valoracion = Integer.parseInt(request.getParameter("valoracion"));
+            Boolean activa = Boolean.parseBoolean(request.getParameter("activa"));
+                 Reserva reserva=new Reserva(id,dni,fechaInicio,fechaFin,valoracion,activa);
                  ReservasBD.insert(reserva);
                  
                       request.getRequestDispatcher(url).forward(request, response);

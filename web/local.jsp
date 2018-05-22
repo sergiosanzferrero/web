@@ -14,6 +14,20 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/navbar.css">
         <link href="css/plaza.css" rel="stylesheet" type="text/css">      
+        <script type="text/javascript">
+        function GetDays(){
+                var dropdt = new Date(document.getElementById("salida-date-input").value);
+                var pickdt = new Date(document.getElementById("llegada-date-input").value);
+                return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+        }
+
+        function cal(){        
+        if(document.getElementById("salida-date-input")){
+            document.getElementById("total2").value= GetDays();
+        }  
+    }
+
+    </script>
     </head>
     <body>
         <%@page import="modelo.Plaza"  %>
@@ -114,7 +128,8 @@ and open the template in the editor.
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="well"><img src="Imagenes/fotoperfil.png"  alt="Foto de perfil"><h4 id="pr"> Julián </h4><p>Ha alquilado varias veces su plaza.</p><p>Reserva la plaza para ponerte en contacto con él y llegar a un acuerdo.</p><p>Tiempo de respuesta: Menos de 10 minutos ?</p></div>
+                        <% Usuario arrendador = (Usuario)request.getAttribute("arrendador");  %>
+                <div class="well"><img src="Imagenes/fotoperfil.png"  alt="Foto de perfil"><h4 id="pr"> <%=arrendador.getNombre()%></h4><p>Ha alquilado varias veces su plaza.</p><p>Reserva la plaza para ponerte en contacto con él y llegar a un acuerdo.</p><p>Tiempo de respuesta: Menos de 10 minutos </p></div>
             </div>
 
         </div>
@@ -123,7 +138,7 @@ and open the template in the editor.
         <div class="well" >
             <h4> Reservar plaza </h4>
             <!--<h5> 2,50 ?/hora </h5> -->
-            <p> <%=plazas.get(0).getPrecioDia()%> &euro;/día </p>
+            <p> <input type="hidden" name="preciodia" value="<%=plazas.get(0).getPrecioDia()%>"><%=plazas.get(0).getPrecioDia()%> &euro;/día </p>
             <!--<p> 20,00 ?/semana </p> -->
             <form action="Reservar" method="post">
             <div class="row">
@@ -136,18 +151,34 @@ and open the template in the editor.
                     <input class="form-control" type="date" id="salida-date-input" name="fecha_salida" required>
                 </div>
                 </div>
-                            <input type="hidden" name="id" value="3">
-                            <input type="hidden" name="dni" value="71156437P">
+                            
+                            
+                            <%String dni= (String) session.getAttribute("dni");%>
+            <div id="total">
+<label class="form">                
             <h4> Total: </h4>
             <br/>
+</label>
+                <input type="text" class="textbox" id="total2" name="total" value=""/>
+            </div>
             <br/>
             <br/>
-            <br/>
+            <% if(dni!=null){%>
+            <input type="hidden" name="id" value="<%=plazas.get(0).getId()%>">
+            <input type="hidden" name="dni" value="<%=dni%>">
+            <input type="hidden" name="valoracion" value="3">
+            <input type="hidden" name="activa" value="false">
                    <div class="submit-row">
-
+                        
                         <input class="btn btn-default submit-form" id="submit-reservar" name="submit-reservar" value=" Reservar " type="submit">
 
                    </div>
+                   <% } else{ %>
+                   <div>
+                       <h4>Por favor, inicie sesión para formalizar reserva</h4>
+                   </div>
+                   <% } %>    
+            </div>
             </form>
         </div>
     </div>
