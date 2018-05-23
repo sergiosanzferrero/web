@@ -31,7 +31,7 @@ public class ControladorEditarPerfil extends HttpServlet {
         
         String dni=usuarioInicial.getDni();
         String nombre=usuarioInicial.getNombre();
-        String apellidos=usuarioInicial.getEmail();
+        String apellidos=usuarioInicial.getApellidos();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String telefono = request.getParameter("telefono");
