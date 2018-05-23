@@ -34,14 +34,16 @@ public class ControladorInicioSesion extends HttpServlet {
 
         String url="";
         if(UsuariosBD.login(email,password)){
-            url="mapa.jsp";
-            Usuario usuario=UsuariosBD.seleccionaUsuario(email);
-            HttpSession session = request.getSession(); 
-            session.setAttribute("login", usuario);
-            session.setAttribute("dni", usuario.getDni());
             if(email.equals("admin")){
-                url="ControlReserva";
+                url="MostrarReservas";
+            }else{
+                url="mapa.jsp";
+                Usuario usuario=UsuariosBD.seleccionaUsuario(email);
+                HttpSession session = request.getSession(); 
+                session.setAttribute("login", usuario);
+                //session.setAttribute("dni", usuario.getDni());
             }
+          
         }
         else{
         url = "errorLogin.html"; 
