@@ -1,8 +1,12 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * 
+ * @author pamaco
  */
+
 package controlador;
 
 import BD.PlazasBD;
@@ -13,7 +17,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +49,18 @@ public class ControladorPlazas extends HttpServlet
         {
             url = "mapa.jsp";
             
+            String direccion = request.getParameter("searcher");
+            String llegada = request.getParameter("llegada");
+            String salida = request.getParameter("salida");
+            String tipo = request.getParameter("sel1");
+            String ordenarPor = request.getParameter("ord");          
+            
             ArrayList<Plaza> plazas = PlazasBD.selectAllPlazas();
+            plazas = FilterPlacesByType(plazas, tipo);
+            
+            if(ordenarPor.equals("Precio"))
+                OrderPlacesByPrice(plazas);
+            
             String json = FillPlacesToJson(plazas);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
@@ -141,6 +162,69 @@ public class ControladorPlazas extends HttpServlet
         request.getRequestDispatcher(url).forward(request, response);
     }
   
+    private ArrayList<Plaza> SelectPlacesBetweenDates(ArrayList<Plaza> places, String indate, String outdate)
+    {
+        /*ArrayList<Plaza> newPlaces = new ArrayList<Plaza>();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try
+        {
+            Date datein = (Date) dateFormat.parse(indate);
+            Date dateout = (Date) dateFormat.parse(outdate);
+            
+            for(int i = 0; i < places.size(); i++)
+            {
+                places.get(i).
+            
+            
+            }
+        }
+        catch(Exception e)
+        {
+            return places;
+        }*/
+        return places;
+    }
+    
+    private ArrayList<Plaza> FilterPlacesByType(ArrayList<Plaza> places, String tipo)
+    {
+        ArrayList<Plaza> newPlaces;
+        
+        if(tipo.equals("Todos"))
+        {
+            newPlaces = places;
+        }
+        
+        else
+        {
+            newPlaces = new ArrayList<Plaza>();
+        
+            for(int i = 0; i < places.size(); i++)
+            {
+                if(places.get(i).getTipo().equals(tipo.toLowerCase()))
+                {
+                    newPlaces.add(places.get(i));
+                }
+            }
+        }
+        
+        return newPlaces;
+    }
+    
+    private void OrderPlacesByPrice(ArrayList<Plaza> places)
+    {
+        Collections.sort(places, new Comparator<Plaza>()
+        {
+            public int compare(Plaza o1, Plaza o2)
+            {
+                if(o1.getPrecioDia() == o2.getPrecioDia())
+                    return 0;
+                
+                return o1.getPrecioDia() < o2.getPrecioDia() ? -1 : 1;
+            }
+       });
+    }
+    
     private String FillPlacesToJson(ArrayList<Plaza> plazas)
     {
         String json = "[";
@@ -151,11 +235,6 @@ public class ControladorPlazas extends HttpServlet
             
             if(address.length() > 30 && address.split(",").length > 1)//Resume la información de la dirección
                 address = address.split(",")[0] + ", " + address.split(",")[1];
-            
-            String desc = plazas.get(i).getDescripcion();
-            
-            if(desc.length() > 40)
-                desc = desc.substring(0,40) + "...";
             
             if(i != 0)
                 json += " , ";

@@ -45,20 +45,21 @@ var HttpClient = function()
     }
 }
 
-var HttpPostClient = function() 
+var HttpPostClient = function()
 {
-    this.get = function(url, aCallback) 
+    this.get = function(url, aCallback, body) 
     {
         var req = new XMLHttpRequest();
-		
+        
         req.onreadystatechange = function()
         { 
             if (req.readyState == 4 && req.status == 200)
                 aCallback(req.responseText);
         }
 		
-        req.open("POST", url, true);            
-        req.send( null );
+        req.open("POST", url, true);   
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        req.send(body);
     }
 }
 
@@ -84,7 +85,13 @@ $(function()
                     var client = new HttpPostClient();
 		
 		    var url = window.location.href.substring(0,window.location.href.length - 4);//'http://localhost:8080/WebApplication1/mapa'
-		    
+
+                    var body = encodeURI("searcher=" + $("#searcher").val() + "&" + 
+                            "llegada=" + $("#llegada").val() + "&" + 
+                            "salida=" + $("#salida").val() + "&" + 
+                            "sel1=" + $("#sel1").val() + "&" + 
+                            "ord=" + $("#ord").val());
+                    
                     client.get(url, function(response) 
                     {
 			placesjson = JSON.parse(response);
@@ -168,20 +175,22 @@ $(function()
                     }
                     else
                     {
-                            alert("no se encontraron plazas");
+                            alert("There were not places found.");
                             $('.scrollable-results').css('display', 'none');
                     }
-                });
+                }, body);
+                
                     $('#carousel').css('display', 'none');
                     $('#items').css('display', 'block');
                     $('.scrollable-items').css('overflow-y', 'scroll');
-                    //map.setView([selectedLocation.lat, selectedLocation.lon], 5);
+                    map.setView([selectedLocation.lat, selectedLocation.lon], 5);
             }
             else
             {
                     alert("There is not selected location.");
                     return;
             }
+            
         }
     });
 });

@@ -108,6 +108,7 @@ and open the template in the editor.
 									<div class="col-md-3" style="margin-left:0;padding-right:1em;margin-bottom:1em;"> 
 										<label for="sel1">Vehículo:</label>
 										<select class="form-control" id="sel1">
+                                                                                        <option>Todos</option>
 											<option>Coche</option>
 											<option>Moto</option>
 											<option>Furgoneta</option>
@@ -116,7 +117,7 @@ and open the template in the editor.
 									<div class="col-md-3" style="margin-left:0;padding-right:1em;margin-bottom:1em;"> 
 										<label for="ord">Ordenar por:</label>
 										<select class="form-control" id="ord">
-											<option>Cercanía</option>
+											<!--<option>Cercanía</option>-->
 											<option>Precio</option>
 											<option>Valoración</option>
 										</select>
