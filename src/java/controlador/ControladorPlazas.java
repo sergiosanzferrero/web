@@ -79,7 +79,7 @@ public class ControladorPlazas extends HttpServlet
             String tipo = request.getParameter("tipo");
             String descripcion = request.getParameter("descripcion");
             String horario = request.getParameter("horario");
-            
+            tipo = tipo.toLowerCase();
             Part filePart = request.getPart("file-upload");
             String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
             InputStream fileContent = filePart.getInputStream();
