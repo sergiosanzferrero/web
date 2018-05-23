@@ -40,7 +40,7 @@ public class ControladorUsuarios extends HttpServlet {
         UsuariosBD.insert(usuario);
         HttpSession session = request.getSession(); 
         session.setAttribute("login", usuario);   
-        
+        session.setAttribute("dni", usuario.getDni());
         //RequestDispatcher dispatcher =getServletContext().getRequestDispatcher(url); 
         //dispatcher.forward(request, response);
         request.getRequestDispatcher(url).forward(request, response);
