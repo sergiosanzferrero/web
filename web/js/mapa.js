@@ -83,7 +83,9 @@ $(function()
                     
                     var client = new HttpPostClient();
 		
-                    client.get('http://localhost:8080/WebApplication1/mapa', function(response) 
+		    var url = window.location.href.substring(0,window.location.href.length - 4);//'http://localhost:8080/WebApplication1/mapa'
+		    
+                    client.get(url, function(response) 
                     {
 			placesjson = JSON.parse(response);
                         
