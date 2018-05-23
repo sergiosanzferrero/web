@@ -23,7 +23,7 @@
                     <h2>Editar perfil</h2>
                 <%@page import="modelo.Usuario"  %>
                 <% Usuario usuario=(Usuario)session.getAttribute("login");  %>
-                    <form action="ControladorEditarPerfil">
+                    <form action="ControladorEditarPerfil" method="post">
                         <div class="form-group"> 
                             <label>DNI:</label>
                             <input  class="form-control" name="dni" placeholder="<%=usuario.getDni()%>" type="text" maxlength="50" readonly>

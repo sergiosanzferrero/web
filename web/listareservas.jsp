@@ -18,12 +18,24 @@
         <%  ArrayList<Reserva> reservas = (ArrayList<Reserva>) session.getAttribute("reservas"); %>
 
                  <% for(int i=0;i<reservas.size();i++){%>
-         <tr>
-             <td> Id de la plaza: <%=reservas.get(i).getId() %></td><br>
-            <td> DNI del que la reserva: <%=reservas.get(i).getDni() %></td><br>
-            <td> Fecha de inicio: <%=reservas.get(i).getFechaInicio() %></td><br>
-            <td> Fecha de fin: <%=reservas.get(i).getFechaFin() %></td><br><br>
-        </tr>
+                    <table border="1" >
+                    <tr>
+                        <td>Id de la plaza</td>
+                        <td>DNI del que la reserva</td>
+                        <td>Fecha de inicio</td>
+                        <td>Fecha de fin</td>
+                    </tr>
+                    <tr>
+                        <td><%=reservas.get(i).getId() %></td>
+                        <td> <%=reservas.get(i).getDni() %></td>
+                        <td><%=reservas.get(i).getFechaInicio() %></td>
+                        <td><%=reservas.get(i).getFechaFin() %></td>
+                        
+                        
+                    </tr>
+ 
+                    </table>
+                    <br>
         <% } %>
     
 </html>
