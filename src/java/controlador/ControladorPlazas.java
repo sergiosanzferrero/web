@@ -71,7 +71,7 @@ public class ControladorPlazas extends HttpServlet
         /*Cuando envia formulario de publicacion de plaza*/
         else if(path.contains("publicar"))
         {
-            url = "mapa.jsp";
+            url = "index.jsp";
             
             String direccion = request.getParameter("searcher");
             Double latitud = Double.parseDouble(request.getParameter("lat"));
