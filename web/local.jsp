@@ -87,7 +87,7 @@ and open the template in the editor.
             <div class="col-md-12">
                 <div class="well">
                     
-<a href="#ip">Información de la plaza</a>&nbsp;|&nbsp;<a href="perfil.html">Propietario</a>&nbsp;|&nbsp;<a href="#ub">Ubicación</a>&nbsp;|&nbsp;<a href="#va">Valoraciones</a>
+<a href="#ip">Información de la plaza</a>&nbsp;|&nbsp;<a href="#prop">Propietario</a>&nbsp;|&nbsp;<a href="#ub">Ubicación</a>&nbsp;|&nbsp;<a href="#va">Valoraciones</a>
 
                     
                 </div>
@@ -129,7 +129,7 @@ and open the template in the editor.
         <div class="row">
             <div class="col-md-12">
                         <% Usuario arrendador = (Usuario)request.getAttribute("arrendador");  %>
-                <div class="well"><img src="Imagenes/fotoperfil.png"  alt="Foto de perfil"><h4 id="pr"> <%=arrendador.getNombre()%></h4><p>Ha alquilado varias veces su plaza.</p><p>Reserva la plaza para ponerte en contacto con él y llegar a un acuerdo.</p><p>Tiempo de respuesta: Menos de 10 minutos </p></div>
+                <div class="well" id="prop"><img src="Imagenes/fotoperfil.png"  alt="Foto de perfil"><h4 id="pr"> <%=arrendador.getNombre()%></h4><p>Ha alquilado varias veces su plaza.</p><p>Reserva la plaza para ponerte en contacto con él y llegar a un acuerdo.</p><p>Tiempo de respuesta: Menos de 10 minutos </p></div>
             </div>
 
         </div>

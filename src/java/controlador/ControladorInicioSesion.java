@@ -41,7 +41,7 @@ public class ControladorInicioSesion extends HttpServlet {
                 Usuario usuario=UsuariosBD.seleccionaUsuario(email);
                 HttpSession session = request.getSession(); 
                 session.setAttribute("login", usuario);
-                //session.setAttribute("dni", usuario.getDni());
+                session.setAttribute("dni", usuario.getDni());
             }
           
         }
