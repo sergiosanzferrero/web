@@ -37,7 +37,7 @@ public class ControladorInicioSesion extends HttpServlet {
             if(email.equals("admin")){
                 url="MostrarReservas";
             }else{
-                url="mapa.jsp";
+                url="index.jsp";
                 Usuario usuario=UsuariosBD.seleccionaUsuario(email);
                 HttpSession session = request.getSession(); 
                 session.setAttribute("login", usuario);
