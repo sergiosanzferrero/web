@@ -45,8 +45,6 @@ CREATE TABLE reservas
     dni VARCHAR(50),
     fechaInicio VARCHAR(50),
     fechaFin VARCHAR(50),
-    valoracion INT,
-    activa BOOLEAN,
     PRIMARY KEY(id,dni,fechaInicio),
     FOREIGN KEY (id) references plazas(id),
     FOREIGN KEY (dni) references usuarios(dni)
@@ -71,6 +69,6 @@ insert into plazas values(8,'14278937W','5, Calle Cyesa, Ventas, Ciudad Lineal, 
 
 
 /*Añadimos reservas realizadas*/
-insert into reservas values(1,'71156437P','12-06-2018','18-06-2018', 3, true);
-insert into reservas values(2,'71456778E','15-05-2018','23-05-2018', 5, false);
+insert into reservas values(1,'71156437P','12-06-2018','18-06-2018');
+insert into reservas values(2,'71456778E','15-05-2018','23-05-2018');
 
