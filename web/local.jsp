@@ -87,7 +87,7 @@ and open the template in the editor.
             <div class="col-md-12">
                 <div class="well">
                     
-<a href="#ip">Información de la plaza</a>&nbsp;|&nbsp;<a href="#prop">Propietario</a>&nbsp;|&nbsp;<a href="#ub">Ubicación</a>&nbsp;|&nbsp;<a href="#va">Valoraciones</a>
+<a href="#ip">Información de la plaza</a>&nbsp;|&nbsp;<a href="#prop">Propietario</a>&nbsp;|&nbsp;<a href="#ub">Ubicación</a>&nbsp;|&nbsp;<!--<a href="#va">Valoraciones</a>-->
 
                     
                 </div>
@@ -154,6 +154,7 @@ and open the template in the editor.
                             
                             
                             <%String dni= (String) session.getAttribute("dni");%>
+                            <!--
             <div id="total">
 <label class="form">                
             <h4> Total: </h4>
@@ -161,6 +162,7 @@ and open the template in the editor.
 </label>
                 <input type="text" class="textbox" id="total2" name="total" value=""/>
             </div>
+                            -->
             <br/>
             <br/>
             <% if(dni!=null){%>
@@ -187,15 +189,15 @@ and open the template in the editor.
                     <div  id="contubica" style="border:1px solid #000000;">
                         <h3 id="ub"> Ubicación </h3>
 <div class="row">
-    <div class="col-md-8">
+    <!--<div class="col-md-8">
         <div class="well">
             <p>Mapa</p>
         </div>
-    </div>
-    <div class="col-md-4">
+    </div> debajo 4-->
+    <div class="col-md-12">
         <div class="well">
             <p>Imagen de la plaza</p>
-            <p><img style='height: 100%; width: 100%; object-fit: contain' src="<%=plazas.get(0).getImg()%>" alt="Imagen plaza"> </p>
+            <p><img style='height: 30%; width: 30%; object-fit: contain' src="<%=plazas.get(0).getImg()%>" alt="Imagen plaza"> </p>
 
         
         </div>
@@ -203,6 +205,7 @@ and open the template in the editor.
 </div>
                         </div>
             <br>
+            <!--
  <div  id="contvalora" style="border:1px solid #000000;">
   <h3 id="va"> Valoraciones </h3>
 <div class="row">
@@ -229,6 +232,7 @@ and open the template in the editor.
  <button type="submit"  class="btn btn-default" style="margin:10px 10px 10px 10px;">Añadir valoración</button>  
 </form>
  </div>
+            -->
             <hr>
             <footer>
             <p>Desarrollado por el equipo Cartime. Todos los derechos reservados. <span class="glyphicon glyphicon-copyright-mark"></span></p>
