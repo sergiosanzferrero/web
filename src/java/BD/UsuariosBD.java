@@ -151,7 +151,7 @@ public static void editaPerfil(Usuario usuario) {
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection connection = pool.getConnection(); 
     PreparedStatement ps = null;
-    ResultSet rs = null;
+    //ResultSet rs = null;
     String query = "UPDATE usuarios SET email=?,telefono=?,password=? WHERE dni=?";
     
     try { 
@@ -160,9 +160,9 @@ public static void editaPerfil(Usuario usuario) {
         ps.setString(2,usuario.getTelefono());
         ps.setString(3,usuario.getPassword());
         ps.setString(4,usuario.getDni());
-        rs = ps.executeQuery();
+        ps.executeUpdate();
       
-        rs.close();
+        //rs.close();
         ps.close(); 
         pool.freeConnection(connection); 
         
