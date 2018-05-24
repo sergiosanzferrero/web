@@ -66,6 +66,8 @@ public static int insert(Reserva reserva) {
                     reserva.setDni(rs.getString("dni"));
                     reserva.setFechaInicio(rs.getString("fechaInicio"));
                     reserva.setFechaFin(rs.getString("fechaFin"));
+                    reserva.setValoracion(rs.getInt("valoracion"));
+                    reserva.setActiva(rs.getBoolean("activa"));
                     reservas.add(reserva);
 
 
