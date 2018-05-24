@@ -149,9 +149,9 @@ public class ControladorPlazas extends HttpServlet
         else if (path.contains("plaza"))
         {
            url = "local.jsp";
-           System.out.println("PLAZAS");
+
           Integer id = Integer.parseInt(request.getParameter("id"));
-          System.out.println("PLAZA CON ID="+id.toString());
+
           ArrayList<Plaza> plazas = PlazasBD.selectPlazaId(id);
           Usuario arrendador = UsuariosBD.seleccionaUsuarioDni(plazas.get(0).getDni());
 

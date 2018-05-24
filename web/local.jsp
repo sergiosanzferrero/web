@@ -137,9 +137,9 @@ and open the template in the editor.
     <div class="col-md-4" >
         <div class="well" >
             <h4> Reservar plaza </h4>
-            <!--<h5> 2,50 ?/hora </h5> -->
+   
             <p> <input type="hidden" name="preciodia" value="<%=plazas.get(0).getPrecioDia()%>"><%=plazas.get(0).getPrecioDia()%> &euro;/día </p>
-            <!--<p> 20,00 ?/semana </p> -->
+  
             <form action="Reservar" method="post">
             <div class="row">
                 <div class="col-md-6">

@@ -159,7 +159,7 @@ public class PlazasBD
         PreparedStatement ps = null;
         ResultSet rs = null;
         String query = "SELECT * FROM plazas where id=?";
-                  System.out.println("CONSULTADO");
+         
         try 
         {
           
