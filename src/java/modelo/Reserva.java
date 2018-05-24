@@ -16,7 +16,6 @@ public class Reserva implements Serializable{
     private String fechaInicio;
     private String fechaFin;
     private Integer valoracion;
-    private Boolean activa;
     
     public Reserva(){
         id="";
@@ -24,16 +23,14 @@ public class Reserva implements Serializable{
         fechaInicio="";
         fechaFin="";   
         valoracion=0;
-        activa=false;
     }
 
-    public Reserva(String id, String dni, String fechaInicio, String fechaFin, Integer valoracion, boolean activa) {
+    public Reserva(String id, String dni, String fechaInicio, String fechaFin, Integer valoracion) {
         this.id = id;
         this.dni = dni;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.valoracion= valoracion;
-        this.activa=activa;
     }
 
     
@@ -97,13 +94,6 @@ public class Reserva implements Serializable{
         this.valoracion = valoracion;
     }
     
-        public Boolean getActiva() {
-        return activa;
-    }
-
-    public void setActiva(Boolean activa) {
-        this.activa = activa;
-    }
     
     
 }

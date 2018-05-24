@@ -22,9 +22,8 @@ public class ReservasBD {
 public static int insert(Reserva reserva) {   
     ConnectionPool pool = ConnectionPool.getInstance(); 
     Connection connection = pool.getConnection();
-    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin,valoracion,activa) VALUES (?, ?, ?, ?, ?, ?)";
+    String query="INSERT INTO reservas (id,dni,fechaInicio,fechaFin,valoracion) VALUES (?, ?, ?, ?, ?)";
     PreparedStatement ps = null;
-    String boolquery=null;
   try {
         ps = connection.prepareStatement(query); 
         ps.setString(1, reserva.getId()); 
@@ -32,11 +31,6 @@ public static int insert(Reserva reserva) {
         ps.setString(3, reserva.getFechaInicio()); 
         ps.setString(4, reserva.getFechaFin()); 
         ps.setString(5, reserva.getValoracion().toString());
-        if (reserva.getActiva().toString().equals("false"))
-            boolquery="0";
-        else boolquery="1";
-        
-        ps.setString(6, boolquery);
         int res = ps.executeUpdate();
         ps.close(); 
         pool.freeConnection(connection);
@@ -67,7 +61,6 @@ public static int insert(Reserva reserva) {
                     reserva.setFechaInicio(rs.getString("fechaInicio"));
                     reserva.setFechaFin(rs.getString("fechaFin"));
                     reserva.setValoracion(rs.getInt("valoracion"));
-                    reserva.setActiva(rs.getBoolean("activa"));
                     reservas.add(reserva);
 
 
@@ -100,6 +93,7 @@ public static int insert(Reserva reserva) {
                     reserva.setDni(rs.getString("dni"));
                     reserva.setFechaInicio(rs.getString("fechaInicio"));
                     reserva.setFechaFin(rs.getString("fechaFin"));
+                    reserva.setValoracion(rs.getInt("valoracion"));
                     reservas.add(reserva);
 
 

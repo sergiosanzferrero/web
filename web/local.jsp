@@ -169,7 +169,7 @@ and open the template in the editor.
             <input type="hidden" name="id" value="<%=plazas.get(0).getId()%>">
             <input type="hidden" name="dni" value="<%=dni%>">
             <input type="hidden" name="valoracion" value="3">
-            <input type="hidden" name="activa" value="false">
+            <!-- <input type="hidden" name="activa" value="false"> -->
                    <div class="submit-row">
                         
                         <input class="btn btn-default submit-form" id="submit-reservar" name="submit-reservar" value=" Reservar " type="submit">
